@@ -1,0 +1,16 @@
+/* GLOBAL */
+@import "./styles/global/global.css";
+
+/* UTILITIES */
+@import "./styles/utilities/cores.css";
+@import "./styles/utilities/cursor.css";
+
+/* PAGES */
+@import "./styles/pages/main.css";
+
+/* RESPONSIVITIES */
+@import "./styles/responsividade/r-main.css";
+
+/* ANIMATIONS */
+@import "./styles/animation/animations.css";
+
