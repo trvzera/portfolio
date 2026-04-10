@@ -58,21 +58,8 @@ main * {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
+  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-#about-app {
-}
-
-#skills-app {
-}
-
-#projects-app {
-}
-#contact-app {
 }
 
 .app:hover {
@@ -170,20 +157,19 @@ main * {
 
 main:has(.app:hover) #main-text,
 main:has(.app:hover) #main-desc,
-main:has(.app:hover) #linktree {
-  filter: blur(6px);
+main:has(.app:hover) #description,
+main:has(.app:hover) #bottom-btn {
+  filter: blur(10px);
   opacity: 0.5;
-  transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
 #app-container:has(.app:hover) .app:not(:hover) {
   filter: blur(6px);
   opacity: 0.4;
+  transition: filter 0.4s ease, opacity 0.4s ease;
 }
 
-/* ── Folder shell ── */
 .folder {
   position: relative;
   width: 140px;
@@ -192,7 +178,6 @@ main:has(.app:hover) #linktree {
   z-index: 1;
 }
 
-/* Tab */
 .folder-tab {
   position: absolute;
   top: 0;
@@ -200,17 +185,18 @@ main:has(.app:hover) #linktree {
   width: 48px;
   height: 18px;
   background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border-radius: 8px 8px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-bottom: none;
   z-index: 4;
   transform-origin: bottom left;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Body back (bottom half that stays) */
 .folder-back {
   position: absolute;
   bottom: 0;
@@ -223,13 +209,14 @@ main:has(.app:hover) #linktree {
     rgba(255, 255, 255, 0.3) 0%,
     rgba(255, 255, 255, 0.1) 100%
   );
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   z-index: 2;
+  transition: backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* Body front (lid that opens) */
 .folder-front {
   position: absolute;
   bottom: 0;
@@ -243,18 +230,15 @@ main:has(.app:hover) #linktree {
     rgba(255, 255, 255, 0.15) 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.15),
-    0 2px 6px rgba(0, 0, 0, 0.08),
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(7px);
+  -webkit-backdrop-filter: blur(7px);
   z-index: 5;
   transform-origin: bottom center;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition:   0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-/* ── Cards / items inside ── */
 .item {
   position: absolute;
   z-index: 3;
@@ -262,12 +246,9 @@ main:has(.app:hover) #linktree {
   overflow: hidden;
   border: 2px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition:
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.4s ease;
+  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
 }
 
-/* resting – stacked behind front face */
 .item-1 {
   width: 104px;
   height: 75px;
@@ -295,16 +276,16 @@ main:has(.app:hover) #linktree {
   opacity: 0;
 }
 
-/* ── HOVER STATE ── */
 .app:hover .folder-front {
   transform: perspective(600px) rotateX(-28deg) translateY(-8px) scaleX(0.98);
+  transition: backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app:hover .folder-tab {
   transform: rotate(-8deg) translateY(-3px);
 }
 
-/* items fly out */
 .app:hover .item-1 {
   transform: translateX(calc(-50% - 30px)) rotate(-12deg) translateY(-80px);
   opacity: 1;
@@ -320,7 +301,6 @@ main:has(.app:hover) #linktree {
   opacity: 1;
 }
 
-/* whole folder lifts */
 .folder {
   transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -329,7 +309,6 @@ main:has(.app:hover) #linktree {
   transform: translateY(-6px);
 }
 
-/* ── App Banner Images (Items) ── */
 .item {
   background-size: cover;
   background-position: center;
@@ -386,9 +365,7 @@ main:has(.app:hover) #linktree {
   flex-direction: column;
   gap: 50px;
   position: relative;
-  transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
+  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -401,9 +378,7 @@ main:has(.app:hover) #linktree {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
+  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   p {
     width: 30%;
