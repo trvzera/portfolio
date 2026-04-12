@@ -3,50 +3,33 @@ main {
   width: 100%;
   position: relative;
   overflow-x: hidden;
-}
-
-main * {
-  transition: opacity 0.4s ease;
-}
-
-#main-text {
-  width: 100%;
-  height: 30%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  p {
-    font-size: 1.6rem;
-    background-image: linear-gradient(
-      270deg,
-      rgba(142, 142, 147, 1) 0%,
-      rgba(58, 58, 60, 1) 100%
-    );
-    color: transparent;
-    background-clip: text;
-  }
-  h1 {
-    font-family: SFPRO-BOLD, arial;
-    font-size: 4.5rem;
-    background-image: linear-gradient(
-      90deg,
-      rgba(28, 28, 30, 1) 0%,
-      rgba(131, 131, 131, 1) 100%
-    );
-    color: transparent;
-    background-clip: text;
-  }
+  background-image: url(/imgs/bg2.jfif);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
 }
 
-#app-container {
+main * {
+  transition:
+    opacity 0.4s ease,
+    filter 0.4s ease;
+}
+
+.app-container {
   width: 100%;
-  height: 50%;
+  height: 80%;
   display: grid;
   align-items: center;
   justify-content: center;
   justify-items: center;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 80px;
 }
 
 .app {
@@ -58,16 +41,21 @@ main * {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
+  filter: blur(0px);
+  transition:
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.15s;
 }
 
 .app:hover {
   width: max-content;
-  filter: none;
+  filter: blur(0px);
   opacity: 1;
   transform: scale(1.05);
   z-index: 10;
+  transition-delay: 0s;
 }
 
 .app:hover > .app-label {
@@ -120,7 +108,10 @@ main * {
   transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+
+
 #main-desc {
+  transition-delay: 0.15s;
   position: absolute;
   width: 20%;
   display: flex;
@@ -157,17 +148,20 @@ main * {
 
 main:has(.app:hover) #main-text,
 main:has(.app:hover) #main-desc,
-main:has(.app:hover) #description,
-main:has(.app:hover) #bottom-btn {
+main:has(.app:hover) #description {
   filter: blur(10px);
   opacity: 0.5;
-  transition: filter 0.4s ease, opacity 0.4s ease;
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease;
 }
 
-#app-container:has(.app:hover) .app:not(:hover) {
+main:has(.app:hover) .app:not(:hover) {
   filter: blur(6px);
   opacity: 0.4;
-  transition: filter 0.4s ease, opacity 0.4s ease;
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease;
 }
 
 .folder {
@@ -184,15 +178,16 @@ main:has(.app:hover) #bottom-btn {
   left: 12px;
   width: 48px;
   height: 18px;
-  background: rgba(255, 255, 255, 0.25);
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 8px 8px 0 0;
   border: 1px solid rgba(255, 255, 255, 0.4);
   border-bottom: none;
   z-index: 4;
   transform-origin: bottom left;
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -206,14 +201,15 @@ main:has(.app:hover) #bottom-btn {
   border-radius: 6px 16px 16px 16px;
   background: linear-gradient(
     150deg,
-    rgba(255, 255, 255, 0.3) 0%,
-    rgba(255, 255, 255, 0.1) 100%
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 1) 100%
   );
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(50px);
+  -webkit-backdrop-filter: blur(50px);
   border: 1px solid rgba(255, 255, 255, 0.4);
   z-index: 2;
-  transition: backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+  transition:
+    backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
     -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
@@ -226,17 +222,19 @@ main:has(.app:hover) #bottom-btn {
   border-radius: 6px 16px 16px 16px;
   background: linear-gradient(
     150deg,
-    rgba(255, 255, 255, 0.35) 0%,
-    rgba(255, 255, 255, 0.15) 100%
+    rgba(255, 255, 255, 0.7) 0%,
+    rgba(255, 255, 255, 0.8) 100%
   );
   border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.08),
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.15),
+    0 2px 6px rgba(0, 0, 0, 0.08),
     inset 0 1px 0 rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(7px);
-  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   z-index: 5;
   transform-origin: bottom center;
-  transition:   0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item {
@@ -244,42 +242,42 @@ main:has(.app:hover) #bottom-btn {
   z-index: 3;
   border-radius: 10px;
   overflow: hidden;
-  border: 2px solid rgba(255, 255, 255, 0.9);
+  border: 5px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+  transition:
+    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.4s ease;
 }
 
 .item-1 {
-  width: 104px;
+  width: 75px;
   height: 75px;
   bottom: 8px;
   left: 50%;
-  transform: translateX(-50%) rotate(-8deg) translateY(4px);
-  opacity: 0;
+  transform: translateX(-10%) rotate(-8deg) translateY(-30px);
+  opacity: 1;
 }
 
 .item-2 {
-  width: 104px;
+  width: 75px;
   height: 75px;
   bottom: 8px;
   left: 50%;
-  transform: translateX(-50%) rotate(0deg) translateY(0px);
-  opacity: 0;
+  transform: translateX(-90%) rotate(0deg) translateY(-30px);
+  opacity: 1;
 }
 
 .item-3 {
-  width: 104px;
+  width: 75px;
   height: 75px;
   bottom: 8px;
   left: 50%;
-  transform: translateX(-50%) rotate(8deg) translateY(4px);
-  opacity: 0;
+  transform: translateX(-70%) rotate(8deg) translateY(-40px);
+  opacity: 1;
 }
 
 .app:hover .folder-front {
   transform: perspective(600px) rotateX(-28deg) translateY(-8px) scaleX(0.98);
-  transition: backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app:hover .folder-tab {
@@ -287,17 +285,17 @@ main:has(.app:hover) #bottom-btn {
 }
 
 .app:hover .item-1 {
-  transform: translateX(calc(-50% - 30px)) rotate(-12deg) translateY(-80px);
+  transform: translateX(calc(-50% - 30px)) rotate(-12deg) translateY(-60px);
   opacity: 1;
 }
 
 .app:hover .item-2 {
-  transform: translateX(-50%) rotate(0deg) translateY(-95px);
+  transform: translateX(-50%) rotate(0deg) translateY(-75px);
   opacity: 1;
 }
 
 .app:hover .item-3 {
-  transform: translateX(calc(-50% + 30px)) rotate(12deg) translateY(-80px);
+  transform: translateX(calc(-50% + 30px)) rotate(12deg) translateY(-60px);
   opacity: 1;
 }
 
@@ -365,8 +363,37 @@ main:has(.app:hover) #bottom-btn {
   flex-direction: column;
   gap: 50px;
   position: relative;
-  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
+  transition:
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.15s;
+}
+
+#main-text {
+  font-family: SFPRO-REGULAR;
+  color: var(--black);
+  font-size: 3rem;
+  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 10px;
+  transition-delay: 0.15s;
+}
+
+#design {
+  font-family: Shadow;
+}
+
+#motion {
+  font-family: Freedoka;
+  font-style: italic;
+}
+
+#code {
+  font-family: Pixel;
 }
 
 #description {
@@ -378,84 +405,15 @@ main:has(.app:hover) #bottom-btn {
   flex-direction: column;
   gap: 10px;
   position: relative;
-  transition: filter 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease,
+  transition:
+    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s ease,
     transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition-delay: 0.15s;
   p {
-    width: 30%;
+    width: 60%;
     text-align: center;
     font-size: 1.2rem;
     color: var(--mid-gray);
-  }
-}
-#bottom-btn {
-  width: max-content;
-  height: 35px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column-reverse;
-  background-color: var(--light-gray);
-  font-family: SFPRO-BOLD, arial;
-  text-decoration: none;
-  padding: 15px;
-  border-radius: 30px;
-  gap: 5px;
-  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
-  cursor: pointer;
-  transform: rotate(0deg);
-  transition: 1s cubic-bezier(0.16, 1, 0.3, 1);
-  svg {
-    width: 26px;
-    height: 26px;
-    color: var(--mid-gray);
-    fill: var(--mid-gray);
-  }
-}
-
-#bottom-btn:hover {
-  width: max-content;
-  height: max-content;
-  transform-origin: bottom;
-  svg {
-    transition: 2s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-}
-
-#btn-containr {
-  width: max-content;
-  height: max-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-}
-
-#bottom-btn:hover #github {
-  width: max-content;
-  height: max-content;
-  p {
-    font-size: 1.2rem;
-    color: var(--mid-gray);
-    transform: scale(1);
-    transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-}
-
-#github {
-  width: max-content;
-  height: max-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 5px;
-  height: 0%;
-  width: 0%;
-  p {
-    font-size: 0rem;
-    color: var(--mid-gray);
-    transform: scale(0);
-    transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
   }
 }
