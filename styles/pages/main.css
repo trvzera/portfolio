@@ -1,8 +1,14 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-image: url(/imgs/bg7.jfif);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
 }
 
 main {
@@ -20,9 +26,7 @@ main {
 }
 
 main * {
-  transition:
-    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 main:has(.app:hover) #main-text,
@@ -81,14 +85,11 @@ main:has(.app:hover) .app:not(:hover) {
 }
 
 .lang-dropdown {
-  position: absolute;
-  top: 5%;
-  right: 5%;
-  z-index: 100;
-  transition:
-    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: 0.15s;
+  position: fixed;
+  top: 40px;
+  right: 40px;
+  z-index: 1000;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .lang-dropdown:hover {
@@ -101,7 +102,6 @@ main:has(.app:hover) .app:not(:hover) {
   align-items: center;
   gap: 8px;
   font-size: 1rem;
-  transition-delay: 0s;
 }
 
 .lang-menu {
@@ -117,7 +117,10 @@ main:has(.app:hover) .app:not(:hover) {
   pointer-events: none;
   transform: translateY(-10px);
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: 0s;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
 #lang-toggle:checked ~ .lang-menu {
@@ -168,11 +171,7 @@ main:has(.app:hover) .app:not(:hover) {
   position: relative;
   filter: blur(0px);
   transform: scale(1.1);
-  transition:
-    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: 0.15s;
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   text-decoration: none;
   color: inherit;
 }
@@ -235,7 +234,7 @@ main:has(.app:hover) .app:not(:hover) {
   height: 110px;
   cursor: pointer;
   z-index: 1;
-  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app:hover .folder {
@@ -293,7 +292,7 @@ main:has(.app:hover) .app:not(:hover) {
   -webkit-backdrop-filter: blur(15px);
   z-index: 5;
   transform-origin: bottom center;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -317,13 +316,43 @@ main:has(.app:hover) .app:not(:hover) {
   background-color: var(--light-gray);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
   opacity: 0.5;
-
   border-radius: 30px;
 }
 
 .app:hover .folder-front {
   transform: perspective(600px) rotateX(-28deg) translateY(-8px) scaleX(0.98);
 }
+
+.emoji-sticker {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 6;
+  pointer-events: none;
+}
+
+#about-app .sticker-1 { left: 10px; top: 10px; transform: rotate(-5deg); }
+#about-app .sticker-2 { right: 10px; top: 30px; transform: rotate(5deg); }
+#about-app:hover .sticker-1 { transform: rotate(-10deg) scale(1.1); }
+#about-app:hover .sticker-2 { transform: rotate(10deg) scale(1.1); }
+
+#skills-app .sticker-1 { left: 10px; top: 35px; transform: rotate(2deg); }
+#skills-app .sticker-2 { right: 10px; top: 10px; transform: rotate(-3deg); }
+#skills-app:hover .sticker-1 { transform: rotate(5deg) scale(1.1); }
+#skills-app:hover .sticker-2 { transform: rotate(-8deg) scale(1.1); }
+
+#projects-app .sticker-1 { left: 12px; top: 20px; transform: rotate(-2deg); }
+#projects-app .sticker-2 { right: 12px; top: 40px; transform: rotate(6deg); }
+#projects-app:hover .sticker-1 { transform: rotate(-5deg) scale(1.1); }
+#projects-app:hover .sticker-2 { transform: rotate(12deg) scale(1.1); }
+
+#contact-app .sticker-1 { left: 8px; top: 40px; transform: rotate(3deg); }
+#contact-app .sticker-2 { right: 8px; top: 15px; transform: rotate(-4deg); }
+#contact-app:hover .sticker-1 { transform: rotate(8deg) scale(1.1); }
+#contact-app:hover .sticker-2 { transform: rotate(-10deg) scale(1.1); }
 
 .item {
   position: absolute;
@@ -336,9 +365,7 @@ main:has(.app:hover) .app:not(:hover) {
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   background-size: cover;
   background-position: center;
-  transition:
-    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item-1 {
@@ -422,7 +449,7 @@ main:has(.app:hover) .app:not(:hover) {
   flex-direction: column;
   gap: 20px;
   position: relative;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -435,7 +462,7 @@ main:has(.app:hover) .app:not(:hover) {
   justify-content: center;
   flex-direction: row;
   gap: 10px;
-  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -456,7 +483,7 @@ main:has(.app:hover) .app:not(:hover) {
   font-style: italic;
   opacity: 0.8;
   margin-top: -10px;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -467,12 +494,12 @@ main:has(.app:hover) .app:not(:hover) {
   justify-content: center;
   flex-direction: column;
   gap: 10px;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
 #description p {
-  width: 65%;
+  width: 100%;
   max-width: 800px;
   min-width: 300px;
   text-align: center;
@@ -506,7 +533,7 @@ main:has(.app:hover) .app:not(:hover) {
   padding: 10px 10px 10px 20px;
   border-radius: 50px;
   box-shadow: 0px 20px 40px -10px rgba(0, 0, 0, 0.4);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -526,8 +553,9 @@ main:has(.app:hover) .app:not(:hover) {
   border-radius: 50%;
   color: var(--black, #000);
   background: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .social-icon svg {
@@ -539,7 +567,7 @@ main:has(.app:hover) .app:not(:hover) {
 .social-icon:hover {
   background: rgba(255, 255, 255, 0.8);
   transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
 }
 
 .social-tooltip {
@@ -578,7 +606,7 @@ main:has(.app:hover) .app:not(:hover) {
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(2, 103, 255, 0.4);
   margin-left: 5px;
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0s;
 }
 
