@@ -53,6 +53,8 @@ main * {
     opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
     transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
+  text-decoration: none;
+  color: inherit;
 }
 
 .app:hover {
@@ -102,7 +104,7 @@ main * {
   font-family: SFPRO-BOLD;
   color: var(--black);
   font-size: 0;
-  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app-desc {
@@ -112,47 +114,11 @@ main * {
   color: var(--mid-gray);
   font-size: 1rem;
   transform: scale(0);
-  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-  #main-desc {
-  transition-delay: 0.15s;
-  position: absolute;
-  width: 20%;
-  display: flex;
-  align-items: start;
-  justify-self: start;
-  flex-direction: column;
-  font-size: 1.2rem;
-  margin-left: 30px;
-  bottom: 5%;
-
-  color: var(--mid-gray);
-  span {
-    color: var(--black);
-  }
-  a {
-    margin-top: 10px;
-    color: var(--blue);
-    fill: var(--blue);
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    svg {
-      color: inherit;
-      fill: inherit;
-      transform: scale(0.8);
-    }
-  }
-  i {
-    font-size: 0.8rem;
-    cursor: pointer;
-  }
-}
 
 main:has(.app:hover) #main-text,
-main:has(.app:hover) #main-desc,
 main:has(.app:hover) #description,
 main:has(.app:hover) .social-container,
 main:has(.app:hover) .lang-dropdown {
@@ -395,9 +361,7 @@ main:has(.app:hover) .app:not(:hover) {
   transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#main-text span:hover {
-  transform: scaleX(1.15) scaleY(0.95);
-}
+
 
 #design {
   font-family: Shadow;
@@ -585,7 +549,7 @@ main:has(.app:hover) .app:not(:hover) {
   border-radius: 16px;
   display: flex;
   flex-direction: column;
-  padding: 8px 0;
+  padding: 6px 3px;
   opacity: 0;
   pointer-events: none;
   transform: translateY(-10px);
@@ -609,9 +573,11 @@ main:has(.app:hover) .app:not(:hover) {
 
 .lang-menu a:hover {
   background: rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
 }
 
 .lang-menu a.active {
   font-family: SFPRO-BOLD, SFPRO-REGULAR;
   opacity: 0.7;
 }
+
