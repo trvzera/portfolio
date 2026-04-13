@@ -21,8 +21,8 @@ main {
 
 main * {
   transition:
-    opacity 0.4s ease,
-    filter 0.4s ease;
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1),
+    filter 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app-container {
@@ -47,11 +47,11 @@ main * {
   gap: 10px;
   position: relative;
   filter: blur(0px);
-  transform: scale(1.08);
+  transform: scale(1.1);
   transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -85,7 +85,7 @@ main * {
   padding: 5px 10px;
   background-color: rgba(243, 243, 243, 0.596);
   border-radius: 30px;
-  color: var(--black);
+  color: var(--mid-gray );
   cursor: pointer;
   border: 1px solid rgba(0, 0, 0, 0.08);
   p {
@@ -93,7 +93,7 @@ main * {
   }
   span {
     font-size: 0;
-    transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: 0.8s cubic-bezier(0.16, 1, 0.3, 1);
     cursor: pointer;
   }
 }
@@ -102,7 +102,7 @@ main * {
   font-family: SFPRO-BOLD;
   color: var(--black);
   font-size: 0;
-  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app-desc {
@@ -112,10 +112,10 @@ main * {
   color: var(--mid-gray);
   font-size: 1rem;
   transform: scale(0);
-  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-#main-desc {
+  #main-desc {
   transition-delay: 0.15s;
   position: absolute;
   width: 20%;
@@ -153,20 +153,22 @@ main * {
 
 main:has(.app:hover) #main-text,
 main:has(.app:hover) #main-desc,
-main:has(.app:hover) #description {
+main:has(.app:hover) #description,
+main:has(.app:hover) .social-container,
+main:has(.app:hover) .lang-dropdown {
   filter: blur(10px);
   opacity: 0.5;
   transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 main:has(.app:hover) .app:not(:hover) {
   filter: blur(6px);
   opacity: 0.4;
   transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .folder {
@@ -192,9 +194,9 @@ main:has(.app:hover) .app:not(:hover) {
   z-index: 4;
   transform-origin: bottom left;
   transition:
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    backdrop-filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .folder-back {
@@ -214,8 +216,8 @@ main:has(.app:hover) .app:not(:hover) {
   border: 1px solid rgba(255, 255, 255, 0.4);
   z-index: 2;
   transition:
-    backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    -webkit-backdrop-filter 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    backdrop-filter 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    -webkit-backdrop-filter 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .folder-front {
@@ -239,7 +241,7 @@ main:has(.app:hover) .app:not(:hover) {
   -webkit-backdrop-filter: blur(15px);
   z-index: 5;
   transform-origin: bottom center;
-  transition: all 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item {
@@ -250,8 +252,8 @@ main:has(.app:hover) .app:not(:hover) {
   border: 5px solid rgba(255, 255, 255, 0.9);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
   transition:
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.4s ease;
+    transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .item-1 {
@@ -305,7 +307,7 @@ main:has(.app:hover) .app:not(:hover) {
 }
 
 .folder {
-  transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .app:hover .folder {
@@ -366,12 +368,12 @@ main:has(.app:hover) .app:not(:hover) {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  gap: 50px;
+  gap: 30px;
   position: relative;
   transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
 }
 
@@ -379,7 +381,7 @@ main:has(.app:hover) .app:not(:hover) {
   font-family: SFPRO-REGULAR;
   color: var(--black);
   font-size: 3rem;
-  transition: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -388,9 +390,19 @@ main:has(.app:hover) .app:not(:hover) {
   transition-delay: 0.15s;
 }
 
+#main-text span {
+  display: inline-block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#main-text span:hover {
+  transform: scaleX(1.15) scaleY(0.95);
+}
+
 #design {
   font-family: Shadow;
 }
+
 
 #description {
   width: 100%;
@@ -402,9 +414,9 @@ main:has(.app:hover) .app:not(:hover) {
   gap: 10px;
   position: relative;
   transition:
-    filter 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.5s ease,
-    transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: 0.15s;
   p {
     width: 90%;
@@ -414,235 +426,192 @@ main:has(.app:hover) .app:not(:hover) {
   }
 }
 
-#main-btn {
-  position: absolute;
-  width: 140px;
-  height: 40px;
+.glass-btn {
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.7),
-    rgba(255, 255, 255, 0.3)
+    rgba(255, 255, 255, 0.4),
+    rgba(255, 255, 255, 0.1)
   );
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow:
     inset 0px 1px 1px rgba(255, 255, 255, 0.8),
     0px 10px 30px rgba(0, 0, 0, 0.1),
-    0px 0px 20px rgba(255, 255, 255, 0.2);
-  left: 50%;
-  top: 5%;
-  transform: translateX(-50%);
-  border-radius: 40px;
-  z-index: 10;
+    0px 0px 20px rgba(255, 255, 255, 0.1);
+  color: var(--black, #000);
+  font-family: SFPRO-REGULAR;
+  border-radius: 30px;
   transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-decoration: none;
 }
 
-.main-btn-default {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
-  padding: 0 14px;
-  position: absolute;
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-  svg {
-    height: 20px;
-    width: 20px;
-    fill: var(--black);
-  }
-  p {
-    font-family: SFPRO-REGULAR;
-    color: var(--black);
-    font-size: 1rem;
-    margin: 0;
-  }
-}
-
-.main-btn-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(20px);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
-  position: absolute;
-  a {
-    color: var(--black);
-    text-decoration: none;
-    font-family: SFPRO-REGULAR;
-    font-size: 0.95rem;
-    padding: 8px 16px;
-    border-radius: 20px;
-    background: rgba(0, 0, 0, 0.05);
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    transition:
-      background 0.3s ease,
-      color 0.3s ease,
-      transform 0.3s ease;
-  }
-  a:hover {
-    background: rgba(0, 0, 0, 0.1);
-    transform: scale(1.05);
-  }
-}
-
-#main-btn:hover {
-  width: 340px;
-  height: 70px;
-  border-radius: 40px;
+.glass-btn:hover {
   background: linear-gradient(
     145deg,
-    rgba(255, 255, 255, 0.8),
-    rgba(255, 255, 255, 0.4)
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.2)
   );
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.5);
   box-shadow:
     inset 0px 1px 2px rgba(255, 255, 255, 0.9),
     0px 15px 40px rgba(0, 0, 0, 0.15),
-    0px 0px 30px rgba(255, 255, 255, 0.4);
+    0px 0px 30px rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
 }
 
-#main-btn:hover .main-btn-default {
+.social-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 10px 10px 10px 20px;
+  border-radius: 50px;
+  box-shadow: 
+    0px 20px 40px -10px rgba(0, 0, 0, 0.4),
+    inset 0px 1px 1px rgba(255, 255, 255, 0.8);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.social-container:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 
+    0px 25px 50px -12px rgba(0, 0, 0, 0.5),
+    inset 0px 1px 2px rgba(255, 255, 255, 0.9);
+}
+
+.social-icon {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: var(--black, #000);
+  background: rgba(255, 255, 255, 0.4);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  flex-shrink: 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.social-icon svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.social-icon:hover {
+  background: rgba(255, 255, 255, 0.8);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.social-tooltip {
+  position: absolute;
+  top: -45px;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-family: SFPRO-REGULAR, sans-serif;
+  white-space: nowrap;
   opacity: 0;
-  transform: translateY(-20px);
   pointer-events: none;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-#main-btn:hover .main-btn-links {
+.social-icon:hover .social-tooltip {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.cta-button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  background: var(--blue, #0267ff);
+  color: #fff;
+  font-family: SFPRO-BOLD, SFPRO-REGULAR, sans-serif;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(2, 103, 255, 0.4);
+  margin-left: 5px;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(2, 103, 255, 0.6);
+}
+
+.fire-icon {
+  width: 20px;
+  height: auto;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  z-index: 100;
+  transition:
+    filter 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.lang-toggle {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.lang-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  width: 100%;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#lang-toggle:checked ~ .lang-menu {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
-  transition-delay: 0.1s;
 }
 
-.burger-menu {
-  position: absolute;
-  right: 5%;
-  top: 5%;
-  width: 50px;
-  height: 50px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 6px;
-  cursor: pointer;
-  z-index: 100;
-  background: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  box-shadow: 
-    0px 4px 10px rgba(0, 0, 0, 0.05),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.8);
-  transition: all 0.3s ease;
-}
-
-.burger-menu:hover {
-  background: rgba(255, 255, 255, 0.6);
-  transform: scale(1.05);
-}
-
-.burger-menu .line {
-  width: 22px;
-  height: 2px;
-  background-color: var(--black, #000);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  transform-origin: center;
-  border-radius: 2px;
-}
-
-#menu-toggle:checked ~ .burger-menu .line-1 {
-  transform: translateY(4px) rotate(45deg);
-}
-
-#menu-toggle:checked ~ .burger-menu .line-2 {
-  transform: translateY(-4px) rotate(-45deg);
-}
-
-.side-menu {
-  position: absolute;
-  right: -320px;
-  top: 0;
-  width: 300px;
-  height: 100vh;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(30px);
-  -webkit-backdrop-filter: blur(30px);
-  border-left: 1px solid rgba(255, 255, 255, 0.4);
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.05);
-  z-index: 90;
-  transition: right 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  display: flex;
-  flex-direction: column;
-  padding: 120px 30px 40px 30px;
-}
-
-#menu-toggle:checked ~ .side-menu {
-  right: 0;
-}
-
-.side-menu-options {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-  margin-bottom: 40px;
-}
-
-.side-option {
-  width: 100%;
-  padding: 14px 20px;
-  background: rgba(255, 255, 255, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  font-family: SFPRO-REGULAR;
-  font-size: 1rem;
-  color: var(--black, #000);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 
-    0px 2px 8px rgba(0, 0, 0, 0.02),
-    inset 0px 1px 1px rgba(255, 255, 255, 0.8);
-}
-
-.side-option:hover {
-  background: rgba(255, 255, 255, 0.5);
-  transform: scale(1.02);
-}
-
-.side-menu-links {
-  display: flex;
-  flex-direction: column;
-  gap: 15px;
-}
-
-.side-menu-links a {
-  color: var(--black, #000);
+.lang-menu a {
+  padding: 8px 20px;
   text-decoration: none;
+  color: var(--black, #000);
   font-family: SFPRO-REGULAR;
-  font-size: 1rem;
-  padding: 12px 15px;
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0.03);
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  transition: all 0.3s ease;
-  text-align: center;
+  font-size: 0.95rem;
+  transition: background 0.2s ease;
 }
 
-.side-menu-links a:hover {
-  background: rgba(0, 0, 0, 0.08);
-  transform: scale(1.03);
+.lang-menu a:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.lang-menu a.active {
+  font-family: SFPRO-BOLD, SFPRO-REGULAR;
+  opacity: 0.7;
 }
