@@ -7,7 +7,9 @@
 @import "./styles/utilities/transitions.css";
 
 /* PAGES */
+/* MAIN */
 @import "./styles/pages/main.css";
+@import "./styles/pages/apps.css";
 @import "./styles/curriculo/curriculo.css";
 
 /* RESPONSIVITIES */
