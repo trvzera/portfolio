@@ -1,11 +1,38 @@
 body {
-  --white: #e5e5ea;
-  --light-gray: #d9d9d9;
-  --mid-gray: #8e8e93;
-  --dark-gray: #3a3a3c;
+  --black0: #000000;
   --black: #1c1c1e;
+  --dark-gray: #3a3a3c;
+  --mid-gray: #8e8e93;
+  --light-gray: #d9d9d9;
+  --white0: #ffffff;
+  --white: #e5e5ea;
+
   --blue: #0267ff;
   --purple: #9933ff;
   --red: #ff3b30;
   --yellow: #ffcc00;
+
+  --blue-06: rgba(2, 103, 255, 0.6);
+  --blue-04: rgba(2, 103, 255, 0.4);
+  --blue-02: rgba(2, 103, 255, 0.2);
+
+  --light-gray-09: rgba(255, 255, 255, 0.9);
+  --light-gray-08: rgba(255, 255, 255, 0.8);
+  --light-gray-07: rgba(255, 255, 255, 0.7);
+  --light-gray-06: rgba(255, 255, 255, 0.6);
+  --light-gray-05: rgba(255, 255, 255, 0.5);
+  --light-gray-04: rgba(255, 255, 255, 0.4);
+  --light-gray-03: rgba(255, 255, 255, 0.3);
+  --light-gray-02: rgba(255, 255, 255, 0.2);
+  --light-gray-01: rgba(255, 255, 255, 0.1);
+
+  --dark-gray-09: rgba(0, 0, 0, 0.9);
+  --dark-gray-08: rgba(0, 0, 0, 0.8);
+  --dark-gray-07: rgba(0, 0, 0, 0.7);
+  --dark-gray-06: rgba(0, 0, 0, 0.6);
+  --dark-gray-05: rgba(0, 0, 0, 0.5);
+  --dark-gray-04: rgba(0, 0, 0, 0.4);
+  --dark-gray-03: rgba(0, 0, 0, 0.3);
+  --dark-gray-02: rgba(0, 0, 0, 0.2);
+  --dark-gray-01: rgba(0, 0, 0, 0.1);
 }

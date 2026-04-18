@@ -1,11 +1,11 @@
 @media (max-width: 1400px) {
-  main {
+  #main {
     padding: 0 100px;
   }
 }
 
 @media (max-width: 1300px) {
-  main {
+  #main {
     padding: 0 50px;
     flex-direction: column;
     gap: 50px;
@@ -35,7 +35,7 @@
 }
 
 @media (max-width: 850px) {
-  main {
+  #main {
     padding: 20px;
   }
 
@@ -88,7 +88,7 @@
   body {
     overflow-x: hidden;
   }
-  main {
+  #main {
     gap: 15px;
   }
   #main-text {
@@ -249,7 +249,7 @@
 
   #description p {
     width: 100%;
-    font-size:  0.77rem;
+    font-size: 0.77rem;
   }
 
   .social-container {

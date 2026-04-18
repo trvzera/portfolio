@@ -3,13 +3,12 @@
 
 /* UTILITIES */
 @import "./styles/utilities/cores.css";
+@import "./styles/utilities/btns.css";
+@import "./styles/utilities/transitions.css";
 
 /* PAGES */
 @import "./styles/pages/main.css";
+@import "./styles/curriculo/curriculo.css";
 
 /* RESPONSIVITIES */
 @import "./styles/responsividade/r-main.css";
-
-/* ANIMATIONS */
-@import "./styles/animation/animations.css";
-
