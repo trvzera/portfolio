@@ -1,3 +1,10 @@
+> **EN:** Personal portfolio site (work in progress), rebuilt from scratch with a new design. Live site at giovannitrivellato.com.br; only the home page exists so far (PT/EN). Built with HTML, CSS, and JavaScript.
+>
+> *The rest of this README is in Brazilian Portuguese (pt-BR).*
+
+
+---
+
 # Portfólio — Giovanni Trivellato
 
 Novo portfólio pessoal em desenvolvimento, sendo refeito do zero. Já existe um site no ar em **[giovannitrivellato.com.br](https://giovannitrivellato.com.br)**; este repositório é a versão em construção, com visual e estrutura novos.
