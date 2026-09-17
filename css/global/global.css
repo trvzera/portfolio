@@ -6,6 +6,11 @@
   transition: var(--transition8);
 }
 
+::selection {
+  background-color: var(--blue-02);
+  color: var(--blue);
+}
+
 body {
   height: 100vh;
   font-family: SFPRO-REGULAR, arial;

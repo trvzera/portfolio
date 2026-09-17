@@ -178,7 +178,6 @@
   width: 35px;
   height: 35px;
   object-fit: contain;
-  filter: drop-shadow(0 4px 8px var(--dark-gray-02));
   transition: all var(--transition8);
   z-index: 6;
   pointer-events: none;
@@ -300,13 +299,13 @@
 }
 
 #about-app .item-1 {
-  background-image: url(../../imgs/banners/about2.png);
+  background-image: url(../../imgs/banners/about0.jpeg);
 }
 #about-app .item-2 {
   background-image: url(../../imgs/banners/about1.png);
 }
 #about-app .item-3 {
-  background-image: url(../../imgs/banners/about3.jpeg);
+  background-image: url(../../imgs/banners/about2.jpeg);
 }
 
 #skills-app .item-1 {

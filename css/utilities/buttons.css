@@ -99,7 +99,7 @@
   box-shadow: 0 10px 30px var(--dark-gray-01);
 }
 
-#lang-toggle:checked ~ .lang-menu {
+.lang-dropdown[data-open] .lang-menu {
   opacity: 1;
   pointer-events: all;
   transform: translateY(0);
@@ -123,3 +123,15 @@
   font-family: SFPRO-BOLD, SFPRO-REGULAR;
   opacity: 0.7;
 }
+
+.lang-toggle {
+  appearance: none;
+}
+
+.lang-menu:hover {
+  background: var(--light-gray-05);
+  transform: translateY(-10px);
+}
+.lang-dropdown[data-open] .lang-menu:hover { transform: translateY(0); }
+.lang-menu a:hover { background: #e8e8ed; color: var(--black); }
+.lang-menu a.active:hover { background: var(--blue-02); color: var(--blue); }

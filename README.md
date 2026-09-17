@@ -1,25 +1,37 @@
-> **EN:** Personal portfolio site (work in progress), rebuilt from scratch with a new design. Live site at giovannitrivellato.com.br; only the home page exists so far (PT/EN). Built with HTML, CSS, and JavaScript.
->
-> *The rest of this README is in Brazilian Portuguese (pt-BR).*
-
-
----
-
 # Portfólio — Giovanni Trivellato
 
-Novo portfólio pessoal em desenvolvimento, sendo refeito do zero. Já existe um site no ar em **[giovannitrivellato.com.br](https://giovannitrivellato.com.br)**; este repositório é a versão em construção, com visual e estrutura novos.
+Portfólio pessoal estático em desenvolvimento, com páginas em português e inglês.
 
-## Status atual
+## Páginas
 
-Por enquanto, **apenas a página inicial está pronta**, em dois idiomas:
+| Conteúdo | Português | Inglês |
+|---|---|---|
+| Início | `pages/home.html` | `pages/en/home.html` |
+| Sobre | `pages/about.html` | `pages/en/about.html` |
 
-| Idioma | Arquivo |
-|--------|---------|
-| Português | `index.html` |
-| Inglês | `english/home.html` |
+`index.html` é a entrada da raiz e encaminha para a home em português. As páginas de Habilidades, Projetos e Contato ainda não foram criadas; os atalhos na home são preparatórios.
 
-A home já traz apresentação, links sociais e atalhos no estilo de “apps” para as demais seções. **Ainda faltam** as páginas internas: Sobre Mim, Habilidades, Projetos e Contato (em PT e EN).
+## Estrutura
 
-## Como visualizar
+```text
+index.html          Entrada do site
+pages/              HTML das páginas, incluindo pages/en/
+css/main.css        Estilos da home
+css/about.css       Entrada dos estilos da página Sobre
+css/about/           Conteúdo, navegação, botões e responsividade da página Sobre
+css/components/      Menu flutuante compartilhado
+css/global/          Regras gerais e fontes
+css/utilities/       Cores, transições e controles
+css/pages/           Layout de cada página
+css/responsive/      Ajustes responsivos da home
+js/                 Seletor de idioma, menu Sobre e controlador Lottie
+lotties/            Animação local do menu
+fonts/              Fontes locais
+imgs/               Imagens e ícones
+```
 
-Abra `index.html` no navegador ou use um servidor local. Para a versão em inglês, acesse `english/home.html` ou o seletor de idioma na própria home.
+Abra `index.html` no navegador ou use um servidor local. O projeto não precisa de instalação ou etapa de build.
+
+## Conteúdo em evolução
+
+A página Sobre reúne apresentação, formação, desenvolvimento, motion/design e ferramentas. Seu menu lateral navega entre essas seções. O botão flutuante abre a navegação entre páginas e links externos nas páginas Sobre e Início. A animação usa `lotties/hamburger.json` com `lottie-web` carregado por CDN; se a biblioteca não carregar, permanece um ícone CSS funcional.

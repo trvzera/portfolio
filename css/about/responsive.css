@@ -1,0 +1,21 @@
+@media (max-width: 760px) {
+  .about-shell { display: block; padding: 32px 24px 130px; }
+  .about-sidebar { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 70px; }
+  .about-nav-label { width: 100%; margin-bottom: 6px; }
+  .about-sidebar a { width: auto; padding: 8px 10px; font-size: 0.88rem; }
+  .about-hero h1 { font-size: clamp(2.7rem, 10vw, 4rem); }
+  .about-intro { margin-top: 48px; }
+  .about-section { margin-top: 55px; padding-top: 38px; }
+  .back-to-top { left: 16px; bottom: 16px; padding: 10px 13px; }
+  .back-to-top span { display: none; }
+}
+
+@media (max-width: 420px) {
+  .about-shell { padding-inline: 20px; }
+  .about-intro p, .about-section p { font-size: 1.04rem; }
+  .about-hero h1 { font-size: clamp(2.4rem, 10vw, 3rem); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .about-page *, .about-page *::before, .about-page *::after { scroll-behavior: auto; transition-duration: 0.01ms !important; }
+}
