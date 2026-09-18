@@ -1,7 +1,7 @@
 let lottiePromise;
 const animations = new Map();
 
-function loadLottie() {
+export function loadLottie() {
   if (!lottiePromise) {
     lottiePromise = import('https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm')
       .then((module) => module.default);

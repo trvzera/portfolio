@@ -47,9 +47,7 @@ if (menu) {
         }
       });
     })
-    .catch(() => {
-      // The CSS icon remains usable when the CDN or JSON cannot load.
-    });
+    .catch(() => {});
 
   window.addEventListener('pagehide', destroyAnimations, { once: true });
 }

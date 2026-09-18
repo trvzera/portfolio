@@ -22,6 +22,21 @@ body {
   padding: 0;
 }
 
+html, #main, .site-menu-panel {
+  scrollbar-color: var(--blue) transparent;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+  background-color: var(--blue);
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover { background-color: #0053d6; }
+
 @font-face {
   font-family: "SFPRO-REGULAR";
   src: url("../../fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");

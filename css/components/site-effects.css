@@ -1,0 +1,31 @@
+@media (prefers-reduced-motion: no-preference) {
+  .reveal-pending { opacity: 0; transform: translate3d(0, 42px, 0) scale(.985); filter: blur(3px); transition: opacity .75s ease, transform .9s cubic-bezier(.22, 1, .36, 1), filter .75s ease; }
+  .reveal-pending.is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); transition-delay: var(--reveal-delay, 0ms); }
+}
+
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  .site-cursor { position: fixed; top: 0; left: 0; z-index: 9999; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: rgba(2, 103, 255, .48); pointer-events: none; opacity: 0; transition: width .22s ease, height .22s ease, margin .22s ease, opacity .18s ease; }
+  .site-cursor.is-visible { opacity: 1; }
+  .site-cursor.is-active { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: #fff;
+    pointer-events: none;
+    opacity: 0;
+    animation: page-enter .3s ease-out backwards;
+    transition: opacity .22s ease-in;
+  }
+
+  body.is-page-leaving::after { animation: none; opacity: 1; }
+}
+
+@keyframes page-enter {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}

@@ -1,7 +1,7 @@
 body.about-page {
   min-height: 100vh;
   height: auto;
-  background: #fbfbfd;
+  background: url("../../imgs/banners/bg7.jfif") center / cover fixed;
   color: var(--black);
   font-family: SFPRO-REGULAR, Arial, sans-serif;
 }
@@ -16,6 +16,8 @@ body.about-page {
 .about-page :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 
 .about-shell {
+  position: relative;
+  z-index: 1;
   display: grid;
   grid-template-columns: 170px minmax(0, 640px);
   gap: clamp(60px, 9vw, 150px);
@@ -23,6 +25,7 @@ body.about-page {
   margin: 0 auto;
   padding: 120px 48px 120px;
 }
+body.about-page::before { content: ""; position: fixed; inset: 0; z-index: 0; background: rgba(255,255,255,.5); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); pointer-events: none; }
 
 .about-content { min-width: 0; }
 .about-eyebrow { color: var(--mid-gray); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 24px; }
@@ -45,4 +48,3 @@ body.about-page {
 .about-links a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
 .about-inline-link:hover,
 .about-links a:hover { color: var(--black); }
-.about-footer { border-top: 1px solid #e5e5ea; margin-top: 80px; padding-top: 22px; color: var(--mid-gray); font-size: 0.82rem; }

@@ -1,11 +1,10 @@
 @import "./utilities/colors.css";
 @import "./utilities/transitions.css";
 @import "./global/global.css";
-
 @import "./utilities/buttons.css";
 @import "./components/site-menu.css";
 @import "./components/site-effects.css";
-
-@import "./pages/home.css";
-@import "./pages/apps.css";
-@import "./responsive/home.css";
+@import "./components/inner-footer.css";
+@import "./projects/layout.css";
+@import "./projects/cards.css";
+@import "./projects/responsive.css";

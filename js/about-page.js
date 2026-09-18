@@ -17,7 +17,6 @@ if (sectionNavigation && backToTop) {
       if (section.getBoundingClientRect().top <= marker) activeSection = section;
     }
 
-    // The final section may be too short to reach the marker before scrolling ends.
     const atPageEnd = window.scrollY + window.innerHeight >=
       document.documentElement.scrollHeight - 2;
     if (atPageEnd) activeSection = sections.at(-1);

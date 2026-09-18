@@ -1,0 +1,20 @@
+.inner-footer {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px 32px;
+  margin-top: 96px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(28, 28, 30, .12);
+  color: var(--mid-gray);
+  font-size: .82rem;
+  line-height: 1.45;
+}
+
+.inner-footer-name { display: block; color: var(--black); }
+.inner-footer-quote { display: block; margin-top: 3px; }
+
+@media (max-width: 600px) {
+  .inner-footer { margin-top: 70px; }
+}

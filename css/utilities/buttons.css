@@ -38,8 +38,6 @@
   transform: translateY(-2px);
 }
 
-/* BLUE BTN */
-
 .blue-btn {
   display: flex;
   align-items: center;
@@ -63,8 +61,6 @@
   transform: translateY(-2px);
   box-shadow: 0 12px 24px var(--blue-06);
 }
-
-/* LANG */
 
 .lang-dropdown {
   position: fixed;
@@ -128,10 +124,7 @@
   appearance: none;
 }
 
-.lang-menu:hover {
-  background: var(--light-gray-05);
-  transform: translateY(-10px);
-}
-.lang-dropdown[data-open] .lang-menu:hover { transform: translateY(0); }
+.lang-toggle svg { transition: transform var(--transition4); }
+.lang-dropdown[data-open] .lang-toggle svg { transform: rotate(180deg); }
 .lang-menu a:hover { background: #e8e8ed; color: var(--black); }
 .lang-menu a.active:hover { background: var(--blue-02); color: var(--blue); }

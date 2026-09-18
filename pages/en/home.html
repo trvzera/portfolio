@@ -6,15 +6,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../../css/main.css">
   <meta name="description" content="Portfolio of Giovanni Trivellato">
-  <link rel="icon" href="../../imgs/emojis/about1.webp">
+  <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <title>Giovanni's Portfolio</title>
   <script src="../../js/language-menu.js" defer></script>
   <script type="module" src="../../js/site-menu.js"></script>
+  <script type="module" src="../../js/site-effects.js"></script>
+  <script type="module" src="../../js/arrow-animations.js"></script>
 </head>
 
 <body>
   <main id="main">
-    <!-- Language selector -->
     <nav class="lang-dropdown" aria-label="Language" data-language-menu>
       <button type="button" class="glass-btn lang-toggle" aria-expanded="false" aria-controls="lang-menu">
         EN-US
@@ -27,8 +28,6 @@
         <a href="../home.html">PT-BR</a>
       </div>
     </nav>
-
-    <!-- First group of section links -->
     <div class="app-container">
       <a href="about.html" class="app" id="about-app">
         <div class="folder">
@@ -73,12 +72,12 @@
         </div>
       </a>
     </div>
-    <!-- Introduction and social links -->
     <div class="bottom-container">
       <h1 id="main-text"><span id="design">Design, </span><span id="motion">motion</span> and <span id="code">code</span></h1>
       <p id="quote">"Everything is a picture waiting to be taken..."</p>
       <div id="description">
-        <p>Hi, my name is <span>Giovanni Trivellato</span>, a 18-year-old developer passionate about creating digital experiences. I currently work with <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, <span class="tech">Python</span>, <span class="tech">Swift</span> and <span class="tech">SwiftUI</span>. My creative toolkit also includes <span class="tool">After Effects</span>, <span class="tool">Photoshop</span> and <span class="tool">Blender</span>. I transform ideas into functional and visually impactful interfaces.</p>
+        <p>Hi, my name is <span>Giovanni Trivellato</span>, a 18-year-old developer passionate about creating digital experiences. I currently work with <span class="tech">HTML</span>, <span class="tech">CSS</span>, <span class="tech">JavaScript</span>, <span class="tech">Python</span>, <span class="tech">Swift</span> and <span class="tech">SwiftUI</span>. My creative toolkit also includes <span class="tool">After Effects</span>, <span class="tool">Photoshop</span> and <span class="tool">Blender</span>.</p>
+        <p><span>How to explore:</span> start with the About Me and Projects folders. The menu in the bottom right has the pages and my social links; switch languages in the top right.</p>
       </div>
       <div class="social-container glass-btn">
         <a href="https://github.com/trvzera" target="_blank" class="social-icon" aria-label="GitHub">
@@ -110,7 +109,6 @@
         </a>
       </div>
     </div>
-    <!-- Second group of section links -->
     <div class="app-container">
       <a href="projects.html" class="app" id="projects-app">
         <div class="folder">
@@ -154,7 +152,6 @@
       </a>
 
     </div>
-    <!-- Footer -->
     <footer id="main-footer">
       <p>© 2026 Giovanni Trivellato. All rights reserved.</p>
     </footer>
@@ -166,18 +163,18 @@
         <a href="home.html" aria-current="page">Home</a>
         <a href="about.html">About me</a>
         <span class="site-menu-unavailable">Skills · Coming soon</span>
-        <span class="site-menu-unavailable">Projects · Coming soon</span>
+        <a href="projects.html">Projects</a>
         <span class="site-menu-unavailable">Contact · Coming soon</span>
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer">Behance ↗</a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Open résumé ↗</a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer">trvzera ↗</a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Open résumé <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
-      <a class="site-menu-language" href="../home.html">Português ↗</a>
+      <a class="site-menu-language" href="../home.html"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>
     <button type="button" class="site-menu-toggle glass-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu-panel">
       <span id="hamburger-animation" class="hamburger-animation" aria-hidden="true"></span>
