@@ -1,12 +1,114 @@
+:root {
+  --site-background-blur: 20px;
+  --site-background-overlay-opacity: .2;
+}
+
+#main {
+  background-color: rgb(255 255 255 / var(--site-background-overlay-opacity));
+  backdrop-filter: blur(var(--site-background-blur));
+  -webkit-backdrop-filter: blur(var(--site-background-blur));
+}
+
+body:is(.about-page, .skills-page, .projects-page, .contact-page)::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgb(255 255 255 / var(--site-background-overlay-opacity));
+  backdrop-filter: blur(var(--site-background-blur));
+  -webkit-backdrop-filter: blur(var(--site-background-blur));
+  pointer-events: none;
+}
+
 @media (prefers-reduced-motion: no-preference) {
-  .reveal-pending { opacity: 0; transform: translate3d(0, 42px, 0) scale(.985); filter: blur(3px); transition: opacity .75s ease, transform .9s cubic-bezier(.22, 1, .36, 1), filter .75s ease; }
-  .reveal-pending.is-visible { opacity: 1; transform: translate3d(0, 0, 0) scale(1); filter: blur(0); transition-delay: var(--reveal-delay, 0ms); }
+  .reveal-pending {
+    opacity: 0;
+    transform: translate3d(0, 42px, 0) scale(0.985);
+    filter: blur(3px);
+    transition:
+      opacity 0.75s ease,
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+      filter 0.75s ease;
+  }
+  .reveal-pending.is-visible {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: blur(0);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+}
+
+.site-background-video {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 1;
+  filter: contrast(1.22) saturate(1.65);
+  pointer-events: none;
+}
+
+.profile-name {
+  position: relative;
+  display: inline-block;
+  outline: none;
+}
+
+.profile-name-photo {
+  position: absolute;
+  z-index: 50;
+  left: 50%;
+  bottom: calc(100% + 14px);
+  width: 150px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 25%;
+  border: 5px solid rgba(255, 255, 255, 0.94);
+  border-radius: 20px;
+  box-shadow: 0 22px 55px rgba(22, 34, 58, 0.2);
+  opacity: 0;
+  pointer-events: none;
+  transform: translate(-50%, 12px) rotate(-3deg) scale(0.92);
+  transition:
+    opacity 0.22s ease,
+    transform 0.42s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.profile-name:hover .profile-name-photo,
+.profile-name:focus-visible .profile-name-photo {
+  opacity: 1;
+  transform: translate(-50%, 0) rotate(-3deg) scale(1);
 }
 
 @media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  .site-cursor { position: fixed; top: 0; left: 0; z-index: 9999; width: 20px; height: 20px; margin: -10px 0 0 -10px; border-radius: 50%; background: rgba(2, 103, 255, .48); pointer-events: none; opacity: 0; transition: width .22s ease, height .22s ease, margin .22s ease, opacity .18s ease; }
-  .site-cursor.is-visible { opacity: 1; }
-  .site-cursor.is-active { width: 11px; height: 11px; margin: -5.5px 0 0 -5.5px; }
+  .site-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    width: 20px;
+    height: 20px;
+    margin: -10px 0 0 -10px;
+    border-radius: 50%;
+    background: rgba(2, 103, 255, 0.48);
+    pointer-events: none;
+    opacity: 0;
+    transition:
+      width 0.22s ease,
+      height 0.22s ease,
+      margin 0.22s ease,
+      opacity 0.18s ease;
+  }
+  .site-cursor.is-visible {
+    opacity: 1;
+  }
+  .site-cursor.is-active {
+    width: 11px;
+    height: 11px;
+    margin: -5.5px 0 0 -5.5px;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -18,14 +120,21 @@
     background: #fff;
     pointer-events: none;
     opacity: 0;
-    animation: page-enter .3s ease-out backwards;
-    transition: opacity .22s ease-in;
+    animation: page-enter 0.3s ease-out backwards;
+    transition: opacity 0.22s ease-in;
   }
 
-  body.is-page-leaving::after { animation: none; opacity: 1; }
+  body.is-page-leaving::after {
+    animation: none;
+    opacity: 1;
+  }
 }
 
 @keyframes page-enter {
-  from { opacity: 1; }
-  to { opacity: 0; }
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
 }

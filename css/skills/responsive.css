@@ -1,0 +1,19 @@
+@media (max-width: 720px) {
+  .skills-section { margin-top: 86px; }
+  .skills-grid { grid-template-columns: 1fr; }
+  .courses-list { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .skills-hero h1 { font-size: clamp(2.7rem, 14vw, 4rem); }
+  .skills-lead { margin-top: 34px; font-size: 1.04rem; }
+  .skills-section-heading { grid-template-columns: 1fr; gap: 10px; }
+  .skill-card { min-height: 0; padding: 18px; }
+  .skill-card-header { grid-template-columns: 38px minmax(0, 1fr); }
+  .skill-card-content { margin-top: 22px; }
+  .certificates-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skills-page *, .skills-page *::before, .skills-page *::after { scroll-behavior: auto; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}

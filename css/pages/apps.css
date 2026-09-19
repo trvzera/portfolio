@@ -299,42 +299,42 @@
 }
 
 #about-app .item-1 {
-  background-image: url(../../imgs/banners/about0.jpeg);
+  background-image: url(../../imgs/banners/about0.webp);
 }
 #about-app .item-2 {
-  background-image: url(../../imgs/banners/about1.png);
+  background-image: url(../../imgs/banners/about1.webp);
 }
 #about-app .item-3 {
-  background-image: url(../../imgs/banners/about2.jpeg);
+  background-image: url(../../imgs/banners/about2.webp);
 }
 
 #skills-app .item-1 {
-  background-image: url(../../imgs/banners/skills1.jpg);
+  background-image: url(../../imgs/banners/skills1.webp);
 }
 #skills-app .item-2 {
-  background-image: url(../../imgs/banners/skills2.png);
+  background-image: url(../../imgs/banners/skills2.webp);
 }
 #skills-app .item-3 {
-  background-image: url(../../imgs/banners/skills3.jpg);
+  background-image: url(../../imgs/banners/skills3.webp);
 }
 
 #projects-app .item-1 {
-  background-image: url(../../imgs/banners/project1.png);
+  background-image: url(../../imgs/banners/project1.webp);
 }
 #projects-app .item-2 {
-  background-image: url(../../imgs/banners/project2.png);
+  background-image: url(../../imgs/banners/project2.webp);
   background-size: cover;
 }
 #projects-app .item-3 {
-  background-image: url(../../imgs/banners/project3.png);
+  background-image: url(../../imgs/banners/project3.webp);
 }
 
 #contact-app .item-1 {
-  background-image: url(../../imgs/banners/contact1.jpg);
+  background-image: url(../../imgs/banners/contact1.webp);
 }
 #contact-app .item-2 {
-  background-image: url(../../imgs/banners/contact2.png);
+  background-image: url(../../imgs/banners/contact2.webp);
 }
 #contact-app .item-3 {
-  background-image: url(../../imgs/banners/contact3.jpeg);
+  background-image: url(../../imgs/banners/contact3.webp);
 }

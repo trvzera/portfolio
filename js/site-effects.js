@@ -1,6 +1,57 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 if (!reducedMotion.matches) {
+  const backgroundVideo = document.createElement('video');
+  backgroundVideo.className = 'site-background-video';
+  backgroundVideo.src = new URL('../media/videos/backloop.webm', import.meta.url);
+  backgroundVideo.autoplay = true;
+  backgroundVideo.loop = true;
+  backgroundVideo.muted = true;
+  backgroundVideo.playsInline = true;
+  backgroundVideo.setAttribute('aria-hidden', 'true');
+  document.body.prepend(backgroundVideo);
+}
+
+const defaultProfilePhoto = new URL(
+  document.querySelector('#main') ? '../imgs/banners/giovanni.webp' : '../imgs/banners/about2.webp',
+  import.meta.url,
+);
+const footerProfilePhoto = new URL('../imgs/banners/about1.webp', import.meta.url);
+const nameNodes = [];
+const nameWalker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+
+while (nameWalker.nextNode()) {
+  const node = nameWalker.currentNode;
+  const parent = node.parentElement;
+  if (node.textContent.includes('Giovanni Trivellato') &&
+      !parent.closest('script, style, .about-name, .profile-name')) nameNodes.push(node);
+}
+
+for (const node of nameNodes) {
+  const parts = node.textContent.split('Giovanni Trivellato');
+  const fragment = document.createDocumentFragment();
+
+  parts.forEach((part, index) => {
+    fragment.append(document.createTextNode(part));
+    if (index === parts.length - 1) return;
+
+    const name = document.createElement('span');
+    name.className = 'profile-name';
+    name.tabIndex = 0;
+    name.append(document.createTextNode('Giovanni Trivellato'));
+
+    const photo = document.createElement('img');
+    photo.className = 'profile-name-photo';
+    photo.src = node.parentElement.closest('footer') ? footerProfilePhoto : defaultProfilePhoto;
+    photo.alt = '';
+    name.append(photo);
+    fragment.append(name);
+  });
+
+  node.replaceWith(fragment);
+}
+
+if (!reducedMotion.matches) {
   window.addEventListener('pageshow', () => {
     document.body.classList.remove('is-page-leaving');
   });
@@ -26,7 +77,7 @@ if (!reducedMotion.matches) {
 
 if (!reducedMotion.matches && "IntersectionObserver" in window) {
   const revealTargets = document.querySelectorAll(
-    ".about-hero, .about-section, .projects-hero, .projects-section-heading, .project-row, .motion-card, .app-container, .bottom-container",
+    ".about-hero, .about-section, .projects-hero, .projects-section-heading, .project-row, .motion-card, .skills-hero, .skills-section, .skill-card, .contact-hero, .contact-section, .contact-social-card, .contact-form, .app-container, .bottom-container",
   );
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -38,7 +89,7 @@ if (!reducedMotion.matches && "IntersectionObserver" in window) {
   );
 
   revealTargets.forEach((target, index) => {
-    if (target.classList.contains("motion-card")) {
+    if (target.classList.contains("motion-card") || target.classList.contains("skill-card")) {
       target.style.setProperty("--reveal-delay", `${(index % 3) * 80}ms`);
     }
     target.classList.add("reveal-pending");

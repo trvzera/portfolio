@@ -1,0 +1,19 @@
+body.contact-page {
+  min-height: 100vh;
+  height: auto;
+  background: url("../../imgs/banners/bg7.jfif") center / cover fixed;
+  color: var(--black);
+}
+
+.contact-page :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
+.contact-content,
+.contact-section,
+.contact-section-heading > div { min-width: 0; }
+.contact-eyebrow { margin-bottom: 22px; color: var(--mid-gray); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; }
+.contact-hero h1 { max-width: 760px; font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: normal; letter-spacing: -.07em; line-height: .98; }
+.contact-lead { max-width: 640px; margin-top: 42px; color: var(--dark-gray); font-size: clamp(1.08rem, 2vw, 1.25rem); line-height: 1.55; }
+.contact-section { margin-top: 112px; padding-top: 30px; border-top: 1px solid rgba(28, 28, 30, .12); scroll-margin-top: 45px; }
+.contact-section-heading { display: grid; grid-template-columns: 56px 1fr; gap: 16px; margin-bottom: 42px; }
+.contact-number { padding-top: 7px; color: var(--mid-gray); font-size: .9rem; }
+.contact-section h2 { font-size: clamp(1.8rem, 3vw, 2.35rem); font-weight: normal; letter-spacing: -.045em; }
+.contact-section-heading p { max-width: 590px; margin-top: 9px; color: var(--dark-gray); line-height: 1.55; }

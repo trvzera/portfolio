@@ -1,0 +1,19 @@
+@media (max-width: 760px) {
+  .contact-hero h1 { font-size: clamp(2.7rem, 12vw, 4rem); }
+  .contact-lead { margin-top: 32px; }
+  .contact-section { margin-top: 82px; }
+  .contact-form { grid-template-columns: 1fr; border-radius: 24px; }
+  .form-field-wide,
+  .contact-form-footer { grid-column: auto; }
+  .contact-form-footer { align-items: stretch; flex-direction: column; }
+  .contact-submit { width: 100%; }
+  .contact-social-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 420px) {
+  .contact-section-heading { grid-template-columns: 42px 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-page *, .contact-page *::before, .contact-page *::after { scroll-behavior: auto; transition-duration: .01ms !important; }
+}

@@ -1,0 +1,12 @@
+@import "./utilities/colors.css";
+@import "./utilities/transitions.css";
+@import "./global/global.css";
+@import "./utilities/buttons.css";
+@import "./components/site-menu.css";
+@import "./components/site-effects.css";
+@import "./components/inner-footer.css";
+@import "./about/buttons.css";
+@import "./skills/layout.css";
+@import "./skills/cards.css";
+@import "./skills/responsive.css";
+@import "./components/inner-navigation.css";

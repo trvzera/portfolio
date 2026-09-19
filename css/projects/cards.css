@@ -48,8 +48,9 @@
 .motion-card:hover h3 { color: var(--blue); }
 .motion-card p { color: var(--mid-gray); font-size: .9rem; line-height: 1.45; margin-top: 7px; }
 .motion-tools { display: flex; align-items: center; gap: 13px; margin-top: 13px; }
-.tool-icon { display: inline-grid; place-items: center; font-size: 1.35rem; line-height: 1; transition: transform .25s ease; }
+.tool-icon { display: inline-grid; place-items: center; color: #55555a; font-size: 1.35rem; line-height: 1; transition: transform .25s ease; }
 .tool-icon img { display: block; width: 1.15em; height: 1.15em; object-fit: contain; filter: grayscale(1) contrast(1.7); }
+.tool-icon i[class*="devicon-"] { color: var(--black) !important; filter: grayscale(1); }
 .motion-card:hover .tool-icon { transform: translateY(-2px); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
 .behance-link { margin-top: 36px; }

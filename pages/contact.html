@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Entre em contato com Giovanni Trivellato">
+  <link rel="icon" type="image/webp" href="../imgs/emojis/about1.webp">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
+  <link rel="preload" href="../lotties/arrow.json" as="fetch">
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <script type="module" src="../js/site-menu.js"></script>
+  <script type="module" src="../js/site-effects.js"></script>
+  <script type="module" src="../js/arrow-animations.js"></script>
+  <script type="module" src="../js/contact-page.js"></script>
+  <title>Contato — Giovanni Trivellato</title>
+</head>
+<body class="contact-page" id="top">
+  <div class="contact-shell">
+    <nav class="contact-sidebar" aria-label="Nesta página">
+      <a class="contact-home-link" href="home.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
+      <span class="contact-nav-label">Nesta página</span>
+      <a href="#message" aria-current="location" aria-label="Enviar mensagem">Enviar mensagem</a>
+      <a href="#socials" aria-label="Redes sociais">Redes sociais</a>
+    </nav>
+
+    <main class="contact-content">
+      <header class="contact-hero">
+        <p class="contact-eyebrow">Giovanni Trivellato / Contato</p>
+        <h1>Vamos criar<br>alguma coisa?</h1>
+        <p class="contact-lead">Tem um projeto, uma oportunidade ou só quer trocar uma ideia? Escolha um canal abaixo ou escreva sua mensagem.</p>
+      </header>
+
+      <section class="contact-section" id="message" aria-labelledby="message-heading">
+        <div class="contact-section-heading"><span class="contact-number">01</span><div><h2 id="message-heading">Envie uma mensagem</h2><p>Preencha os campos e vou receber a mensagem pelo seu aplicativo de e-mail.</p></div></div>
+        <form class="contact-form" data-contact-form data-language="pt" action="mailto:giovanni@trvzera.com.br" method="post" enctype="text/plain">
+          <div class="form-field"><label for="contact-name">Nome</label><input id="contact-name" name="name" type="text" autocomplete="name" placeholder="Como posso te chamar?" required></div>
+          <div class="form-field"><label for="contact-email">Seu e-mail</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="voce@email.com" required></div>
+          <div class="form-field form-field-wide"><label for="contact-subject">Assunto</label><input id="contact-subject" name="subject" type="text" placeholder="Sobre o que você quer conversar?" required></div>
+          <div class="form-field form-field-wide"><label for="contact-message">Mensagem</label><textarea id="contact-message" name="message" placeholder="Conte um pouco sobre sua ideia, projeto ou oportunidade." required></textarea></div>
+          <div class="contact-form-footer"><p class="contact-form-note" data-form-status>Ao enviar, seu aplicativo de e-mail abrirá com a mensagem pronta.</p><button class="contact-submit" type="submit">Preparar e-mail <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button></div>
+        </form>
+      </section>
+
+      <section class="contact-section" id="socials" aria-labelledby="socials-heading">
+        <div class="contact-section-heading"><span class="contact-number">02</span><div><h2 id="socials-heading">Outros canais</h2><p>Você também pode acompanhar meus projetos e entrar em contato pelas redes.</p></div></div>
+        <div class="contact-social-grid">
+          <a class="contact-social-card" href="https://www.instagram.com/trvzera/" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram — abre em uma nova aba"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span><strong>Instagram</strong><small>@trvzera</small></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+          <a class="contact-social-card" href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="Abrir LinkedIn — abre em uma nova aba"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span><strong>LinkedIn</strong><small>Giovanni Trivellato</small></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+          <a class="contact-social-card" href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Abrir GitHub — abre em uma nova aba"><i class="fa-brands fa-github" aria-hidden="true"></i><span><strong>GitHub</strong><small>@trvzera</small></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+          <a class="contact-social-card" href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Abrir Behance — abre em uma nova aba"><i class="fa-brands fa-behance" aria-hidden="true"></i><span><strong>Behance</strong><small>@trvzera</small></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        </div>
+      </section>
+
+      <footer class="inner-footer"><div><span class="inner-footer-name">Giovanni Trivellato</span><span class="inner-footer-quote">“Everything is a picture waiting to be taken...”</span></div><span>© 2026 · Belo Horizonte, MG</span></footer>
+    </main>
+  </div>
+
+  <a class="back-to-top glass-btn" href="#top" aria-label="Voltar ao topo"><span class="link-arrow link-arrow-up" aria-hidden="true">→</span><span>Voltar ao topo</span></a>
+  <div class="site-menu" data-site-menu data-animation="../lotties/hamburger.json" data-open-label="Abrir menu" data-close-label="Fechar menu">
+    <div class="site-menu-panel glass-btn" id="site-menu-panel" aria-hidden="true">
+      <div class="site-menu-group">
+        <span class="site-menu-heading">Páginas</span>
+        <a href="home.html" aria-label="Início"><span>Início</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="about.html" aria-label="Sobre mim"><span>Sobre mim</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="skill.html" aria-label="Habilidades"><span>Habilidades</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="projects.html" aria-label="Projetos"><span>Projetos</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="#top" aria-current="page" aria-label="Contato"><span>Contato</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+      </div>
+      <div class="site-menu-group">
+        <span class="site-menu-heading">Redes e links</span>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.instagram.com/trvzera/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — abre em uma nova aba">Instagram <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo — abre em uma nova aba">Abrir currículo <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+      </div>
+      <a class="site-menu-language" href="en/contact.html" aria-label="English"><span>English</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+    </div>
+    <button type="button" class="site-menu-toggle glass-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu-panel"><span id="hamburger-animation" class="hamburger-animation" aria-hidden="true"></span><span class="hamburger-fallback" aria-hidden="true"><span></span><span></span><span></span></span></button>
+  </div>
+</body>
+</html>

@@ -5,6 +5,8 @@
 @import "./components/site-menu.css";
 @import "./components/site-effects.css";
 @import "./components/inner-footer.css";
+@import "./about/buttons.css";
 @import "./projects/layout.css";
 @import "./projects/cards.css";
 @import "./projects/responsive.css";
+@import "./components/inner-navigation.css";

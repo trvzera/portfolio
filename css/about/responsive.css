@@ -1,20 +1,26 @@
 @media (max-width: 760px) {
-  .about-shell { display: block; padding: 32px 24px 130px; }
-  .about-sidebar { position: static; flex-direction: row; flex-wrap: wrap; align-items: center; gap: 8px; margin-bottom: 70px; }
-  .about-nav-label { width: 100%; margin-bottom: 6px; }
-  .about-sidebar a { width: auto; padding: 8px 10px; font-size: 0.88rem; }
-  .about-sidebar .about-home-link { width: 100%; margin-bottom: 18px; padding: 0 0 14px; }
   .about-hero h1 { font-size: clamp(2.7rem, 10vw, 4rem); }
   .about-intro { margin-top: 48px; }
   .about-section { margin-top: 55px; padding-top: 38px; }
+  .about-name-photo { width: 130px; border-radius: 17px; }
+  .about-volunteering { grid-template-columns: 1fr; }
+  .about-process::before { left: 22px; }
+  .about-process-item { grid-template-columns: 44px minmax(0, 1fr); gap: 14px; min-height: 126px; }
+  .about-process-marker { grid-column: 1; width: 40px; height: 40px; }
+  .about-process-copy,
+  .about-process-item:nth-child(even) .about-process-copy { grid-column: 2; grid-row: 1; padding: 20px; text-align: left; }
   .back-to-top { left: 16px; bottom: 16px; padding: 10px 13px; }
-  .back-to-top span { display: none; }
+  .back-to-top > span:not(.link-arrow) { display: none; }
 }
 
 @media (max-width: 420px) {
-  .about-shell { padding-inline: 20px; }
   .about-intro p, .about-section p { font-size: 1.04rem; }
   .about-hero h1 { font-size: clamp(2.4rem, 10vw, 3rem); }
+  .about-process-item { grid-template-columns: 38px minmax(0, 1fr); gap: 11px; }
+  .about-process::before { left: 19px; }
+  .about-process-marker { width: 36px; height: 36px; border-radius: 12px; }
+  .about-process-copy,
+  .about-process-item:nth-child(even) .about-process-copy { padding: 17px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

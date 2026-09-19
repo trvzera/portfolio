@@ -25,6 +25,7 @@ if (arrows.length && !reducedMotion.matches) {
         loop: false,
         autoplay: false,
         animationData: structuredClone(animationData),
+        rendererSettings: { preserveAspectRatio: 'xMidYMid meet' },
       });
 
       instances.push(animation);

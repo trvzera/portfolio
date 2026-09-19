@@ -6,6 +6,6 @@
 @import "./components/site-effects.css";
 @import "./components/inner-footer.css";
 @import "./about/content.css";
-@import "./about/navigation.css";
 @import "./about/buttons.css";
 @import "./about/responsive.css";
+@import "./components/inner-navigation.css";

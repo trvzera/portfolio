@@ -12,5 +12,11 @@
   transition: opacity var(--transition4), transform var(--transition4), visibility var(--transition4);
 }
 
+.back-to-top .link-arrow { width: 1.05em; height: 1.05em; }
+
 .back-to-top[data-visible] { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 .back-to-top:hover { color: var(--blue); }
+
+@media (max-width: 760px) {
+  .back-to-top > span:not(.link-arrow) { display: none; }
+}

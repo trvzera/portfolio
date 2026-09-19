@@ -3,7 +3,6 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
-  transition: var(--transition8);
 }
 
 ::selection {
@@ -20,6 +19,7 @@ body {
   background-repeat: no-repeat;
   margin: 0;
   padding: 0;
+  isolation: isolate;
 }
 
 html, #main, .site-menu-panel {

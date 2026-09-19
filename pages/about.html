@@ -5,7 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Sobre mim — Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../imgs/emojis/about1.webp">
+  <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
+  <link rel="preload" href="../lotties/arrow.json" as="fetch">
   <link rel="stylesheet" href="../css/about.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <script type="module" src="../js/site-menu.js"></script>
   <script type="module" src="../js/site-effects.js"></script>
   <script type="module" src="../js/arrow-animations.js"></script>
@@ -15,83 +18,109 @@
 <body class="about-page" id="top">
   <div class="about-shell">
     <nav class="about-sidebar" aria-label="Nesta página">
-      <a class="about-home-link" href="home.html">← Voltar ao início</a>
+      <a class="about-home-link" href="home.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
       <span class="about-nav-label">Nesta página</span>
-        <a href="#profile" aria-current="location">Sobre mim</a>
-        <a href="#formation">Formação</a>
-        <a href="#development">Desenvolvimento</a>
-        <a href="#creative">Motion & design</a>
-        <a href="#tools">Ferramentas</a>
+        <a href="#profile" aria-current="location" aria-label="Sobre mim">Sobre mim</a>
+        <a href="#formation" aria-label="Formação">Formação</a>
+        <a href="#experience" aria-label="Experiência">Experiência</a>
+        <a href="#volunteering" aria-label="Voluntariado">Voluntariado</a>
+        <a href="#development" aria-label="Desenvolvimento">Desenvolvimento</a>
+        <a href="#creative" aria-label="Motion &amp; design">Motion & design</a>
+        <a href="#tools" aria-label="Ferramentas">Ferramentas</a>
     </nav>
 
     <main class="about-content">
       <header class="about-hero">
         <p class="about-eyebrow">Giovanni Trivellato / Sobre mim</p>
         <h1>Código, <em>design</em><br>e movimento.</h1>
-        <div class="about-intro"><p>Sou Giovanni Trivellato, tenho <strong>18 anos</strong> e sou de <strong>Belo Horizonte, MG</strong>. Crio experiências digitais que unem desenvolvimento web, design e movimento.</p><p>A tecnologia e o design despertaram meu interesse ainda na infância. Hoje, gosto de transformar esse interesse em páginas, animações e projetos que funcionam bem e comunicam com clareza.</p></div>
+        <div class="about-intro"><p>Eu sou <span class="about-name" tabindex="0">Giovanni Trivellato<img class="about-name-photo" src="../imgs/banners/about2.webp" alt=""></span>, tenho <strong>18 anos</strong> e sou de <strong>Belo Horizonte, MG</strong>. Gosto de misturar código, design e movimento em tudo que crio.</p><p>Sempre fui curioso com tecnologia e com a forma como as coisas são feitas. Hoje transformo essa curiosidade em sites, apps, animações e projetos que tenham personalidade.</p></div>
       </header>
 
       <section class="about-section" id="profile" aria-labelledby="heading-profile">
         <span class="about-number">01</span>
         <h2 id="heading-profile">Sobre mim</h2>
-        <p>Meu caminho passa por desenvolvimento e criação visual. Na web, procuro organizar conteúdo e construir interfaces. No vídeo, trabalho com ritmo, movimento e narrativa.</p>
-        <p>Fora das telas, gosto muito de jogar e mestrar RPG. Criar histórias e pensar em experiências para outras pessoas também alimenta meu lado criativo.</p>
+        <p>Sou uma pessoa bem curiosa e extremamente competitiva. Gosto de aprender colocando a mão na massa, testar ideias e melhorar cada detalhe até sentir que o resultado realmente ficou bom.</p>
+        <p>Fora do código, gosto muito de jogar, ouvir música e mestrar RPG. Meus jogos favoritos são <strong>Outer Wilds</strong> e <strong>Life is Strange 2</strong>: gosto de histórias marcantes, escolhas difíceis e críticas sociais que continuam na cabeça mesmo depois que o jogo termina.</p>
       </section>
 
       <section class="about-section" id="formation" aria-labelledby="heading-formation">
         <span class="about-number">02</span>
         <h2 id="heading-formation">Formação</h2>
-        <p>Estou no <strong>terceiro ano do ensino médio técnico no COTEMIG</strong>, cursando Desenvolvimento Web e Mobile. Além das aulas, faço cursos online para ampliar meus conhecimentos e experimentar novas ferramentas.</p>
-        <p>Meu interesse por aplicativos começou na disciplina de Desenvolvimento iOS do COTEMIG. Já criei projetos básicos e agora estudo para construir outros. Pretendo seguir carreira em <span class="about-highlight">desenvolvimento iOS</span>, trabalhando do design das telas à programação, sem me limitar a um tipo de app.</p>
+        <div class="about-process about-timeline">
+          <article class="about-process-item"><span class="about-process-marker">01</span><div class="about-process-copy"><span>2026 · Atual</span><h3>Colégio COTEMIG</h3><p>Desenvolvedor Web & Mobile · Unidade Floresta · 3ª série, manhã</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker">02</span><div class="about-process-copy"><span>2025</span><h3>Colégio COTEMIG</h3><p>Técnico em Informática · Unidade Floresta · 2ª série, manhã</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker">03</span><div class="about-process-copy"><span>2024</span><h3>Colégio COTEMIG</h3><p>Técnico em Informática · Unidade Floresta · 1ª série, manhã</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker">04</span><div class="about-process-copy"><span>2023</span><h3>Maximus Colégio</h3><p>Conclusão do Ensino Fundamental II · Unidade Santa Inês</p></div></article>
+        </div>
+        <p class="about-language"><strong>Inglês fluente</strong>, com formação pelo curso Inglês Express, em Belo Horizonte. Também continuo estudando por cursos online da Origamid e Layer Lemonade.</p>
+      </section>
+
+      <section class="about-section" id="experience" aria-labelledby="heading-experience">
+        <span class="about-number">03</span>
+        <h2 id="heading-experience">Experiência</h2>
+        <div class="about-process about-experience">
+          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span><div class="about-process-copy"><span>Estágio anterior</span><h3>PXT Informática</h3><p>Atendimento ao cliente, manutenção, limpeza, montagem e formatação de computadores. Também atuei como videomaker.</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-headset" aria-hidden="true"></i></span><div class="about-process-copy"><span>Estágio atual</span><h3>Colégio Nossa Senhora das Dores</h3><p>Atendimento a crianças e pessoas com pouca experiência em tecnologia, com adaptação rápida a plataformas como Microsoft Teams, SAS, Microsoft 365 e SM.</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span><div class="about-process-copy"><span>Experiência prática</span><h3>Motion design & web</h3><p>Experiência com motion design, edição e animações aplicadas a websites e interfaces.</p></div></article>
+        </div>
+      </section>
+
+      <section class="about-section" id="volunteering" aria-labelledby="heading-volunteering">
+        <span class="about-number">04</span>
+        <h2 id="heading-volunteering">Trabalhos voluntários</h2>
+        <div class="about-volunteering">
+          <article><span>Educação & tecnologia</span><h3>Code Club</h3><p>Participação em atividades voluntárias ligadas à tecnologia e ao aprendizado.</p></article>
+          <article><span>Ação social</span><h3>Banho Solidário</h3><p>Participação em ações voluntárias de cuidado e apoio social.</p></article>
+        </div>
       </section>
 
       <section class="about-section" id="development" aria-labelledby="heading-development">
-        <span class="about-number">03</span>
+        <span class="about-number">05</span>
         <h2 id="heading-development">Desenvolvimento</h2>
-        <p>Tenho experiência com <strong>HTML, CSS e JavaScript</strong> para criar páginas e interfaces web. Atualmente também estudo e utilizo <strong>Python, Swift e SwiftUI</strong>.</p>
-        <p>Meu maior projeto de software em andamento é a <a class="about-inline-link" href="projects.html#boostio">BOOSTio</a>, que desenvolvo com uma equipe para ajudar pessoas a montar e configurar computadores. Também mantenho o <a class="about-inline-link" href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer">trvzera.com.br</a>, meu site pessoal com informações sobre mim, projetos e redes sociais.</p>
+        <p>Tenho experiência com <strong>HTML, CSS e JavaScript</strong> para criar páginas e interfaces web. Quero concentrar minha carreira em <span class="about-highlight">desenvolvimento mobile</span>, especialmente com Swift e SwiftUI para iOS, unindo design e programação. Também utilizo Python em estudos e projetos.</p>
+        <p>Meu maior projeto de software em andamento é a <a class="about-inline-link" href="projects.html#boostio" aria-label="BOOSTio">BOOSTio</a>, que desenvolvo com uma equipe para ajudar pessoas a montar e configurar computadores. Também mantenho o <a class="about-inline-link" href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera.com.br — abre em uma nova aba">trvzera.com.br</a>, meu site pessoal com informações sobre mim, projetos e redes sociais.</p>
       </section>
 
       <section class="about-section" id="creative" aria-labelledby="heading-creative">
-        <span class="about-number">04</span>
+        <span class="about-number">06</span>
         <h2 id="heading-creative">Motion & design</h2>
         <p>Trabalho com edição de vídeos curtos e longos, cortes, motion e animações. Uso <strong>After Effects, Photoshop e Blender</strong> para explorar movimento, imagem e composição.</p>
-        <p>Crio vinhetas, animações para redes, MMVs, edições 3D e thumbs. Reúno esses trabalhos no meu <a class="about-inline-link" href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer">portfólio no Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>.</p>
+        <p>Crio vinhetas, animações para redes, MMVs, edições 3D e thumbs. Reúno esses trabalhos no meu <a class="about-inline-link" href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="portfólio no Behance — abre em uma nova aba">portfólio no Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>.</p>
         <p>Essa experiência visual influencia a forma como penso transições, hierarquia e detalhes nas interfaces.</p>
       </section>
 
       <section class="about-section" id="tools" aria-labelledby="heading-tools">
-        <span class="about-number">05</span>
+        <span class="about-number">07</span>
         <h2 id="heading-tools">Ferramentas</h2>
-        <p>Meu repertório atual reúne desenvolvimento web, programação e criação visual.</p>
-        <ul class="about-stack"><li>HTML</li><li>CSS</li><li>JavaScript</li><li>Python</li><li>Swift</li><li>SwiftUI</li><li>After Effects</li><li>Photoshop</li><li>Blender</li></ul><div class="about-links"><a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer">Explorar GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer">Ver site pessoal <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir currículo <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
+        <p>Meu repertório atual reúne HTML, CSS, JavaScript, Python, Swift, SwiftUI, After Effects, Premiere, Photoshop, Canva e Blender. A página de <a class="about-inline-link" href="skill.html" aria-label="habilidades">habilidades</a> mostra como uso cada uma dessas ferramentas.</p>
+        <div class="about-links"><a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Explorar GitHub — abre em uma nova aba">Explorar GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Ver site pessoal — abre em uma nova aba">Ver site pessoal <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo — abre em uma nova aba">Abrir currículo <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
       </section>
 
       <footer class="inner-footer"><div><span class="inner-footer-name">Giovanni Trivellato</span><span class="inner-footer-quote">“Everything is a picture waiting to be taken...”</span></div><span>© 2026 · Belo Horizonte, MG</span></footer>
     </main>
   </div>
 
-  <a class="back-to-top glass-btn" href="#top" aria-label="Voltar ao topo">↑ <span>Voltar ao topo</span></a>
+  <a class="back-to-top glass-btn" href="#top" aria-label="Voltar ao topo"><span class="link-arrow link-arrow-up" aria-hidden="true">→</span><span>Voltar ao topo</span></a>
 
   <div class="site-menu" data-site-menu data-animation="../lotties/hamburger.json" data-open-label="Abrir menu" data-close-label="Fechar menu">
     <div class="site-menu-panel glass-btn" id="site-menu-panel" aria-hidden="true">
       <div class="site-menu-group">
         <span class="site-menu-heading">Páginas</span>
-        <a href="home.html">Início</a>
-        <a href="#top" aria-current="page">Sobre mim</a>
-        <span class="site-menu-unavailable">Habilidades · Em breve</span>
-        <a href="projects.html">Projetos</a>
-        <span class="site-menu-unavailable">Contato · Em breve</span>
+        <a href="home.html" aria-label="Início"><span>Início</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="#top" aria-current="page" aria-label="Sobre mim"><span>Sobre mim</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="skill.html" aria-label="Habilidades"><span>Habilidades</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="projects.html" aria-label="Projetos"><span>Projetos</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="contact.html" aria-label="Contato"><span>Contato</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Redes e links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Abrir currículo <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo — abre em uma nova aba">Abrir currículo <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
-      <a class="site-menu-language" href="en/about.html"><span>English</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+      <a class="site-menu-language" href="en/about.html" aria-label="English"><span>English</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>
     <button type="button" class="site-menu-toggle glass-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="site-menu-panel">
       <span id="hamburger-animation" class="hamburger-animation" aria-hidden="true"></span>

@@ -6,8 +6,6 @@
   .motion-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 600px) {
-  .projects-shell { padding: 28px 20px 100px; }
-  .projects-back { margin-bottom: 75px; }
   .projects-lead { font-size: 1.05rem; }
   .projects-section { margin-top: 90px; }
   .projects-section-heading { grid-template-columns: 1fr; gap: 12px; margin-bottom: 34px; }
