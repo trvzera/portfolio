@@ -6,8 +6,14 @@ if (menu) {
   const toggle = menu.querySelector('.site-menu-toggle');
   const panel = menu.querySelector('.site-menu-panel');
   const animationPath = menu.dataset.animation;
+  const cascadeItems = panel.querySelectorAll('.site-menu-group > *, .site-menu-language');
   let animation = null;
   let open = false;
+
+  cascadeItems.forEach((item, index) => {
+    item.style.setProperty('--menu-item-index', index);
+  });
+  menu.setAttribute('data-cascade-ready', '');
 
   function setOpen(value) {
     open = value;

@@ -1,9 +1,33 @@
+import {
+  destroyAnimations,
+  registerDirectionalAnimation,
+} from './components/lottie-controller.js';
+
 const form = document.querySelector('[data-contact-form]');
 
 if (form) {
+  const sendAnimation = form.querySelector('[data-send-animation]');
+  const submitButton = form.querySelector('.contact-submit');
+  let sendAnimationInstance = null;
+
+  if (sendAnimation && submitButton) {
+    registerDirectionalAnimation(
+      sendAnimation.id,
+      sendAnimation.dataset.sendAnimation,
+      submitButton,
+    ).then((animation) => {
+      sendAnimationInstance = animation;
+    }).catch(() => {});
+  }
+
   form.addEventListener('submit', (event) => {
     event.preventDefault();
     if (!form.reportValidity()) return;
+
+    if (sendAnimationInstance) {
+      sendAnimationInstance.setDirection(1);
+      if (sendAnimationInstance.isPaused) sendAnimationInstance.play();
+    }
 
     const fields = new FormData(form);
     const portuguese = form.dataset.language === 'pt';
@@ -14,6 +38,8 @@ if (form) {
 
     window.location.href = `mailto:giovanni@trvzera.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
+
+  window.addEventListener('pagehide', destroyAnimations, { once: true });
 }
 
 const sectionNavigation = document.querySelector('.contact-sidebar');

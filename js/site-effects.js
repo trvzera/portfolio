@@ -1,16 +1,50 @@
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
+console.info(
+  '%cVocê encontrou um acampamento escondido. Siga @trvzera no Instagram e depois arrume mais alguma coisa para fazer da vida.',
+  'color: #0267ff; font: 600 13px system-ui;',
+);
+
 if (!reducedMotion.matches) {
   const backgroundVideo = document.createElement('video');
   backgroundVideo.className = 'site-background-video';
-  backgroundVideo.src = new URL('../media/videos/backloop.webm', import.meta.url);
   backgroundVideo.autoplay = true;
   backgroundVideo.loop = true;
   backgroundVideo.muted = true;
+  backgroundVideo.defaultMuted = true;
   backgroundVideo.playsInline = true;
+  backgroundVideo.controls = false;
+  backgroundVideo.disablePictureInPicture = true;
+  backgroundVideo.preload = 'auto';
+  backgroundVideo.setAttribute('autoplay', '');
+  backgroundVideo.setAttribute('loop', '');
+  backgroundVideo.setAttribute('muted', '');
+  backgroundVideo.setAttribute('playsinline', '');
+  backgroundVideo.setAttribute('webkit-playsinline', '');
+  backgroundVideo.setAttribute('disablepictureinpicture', '');
+  backgroundVideo.setAttribute('x-webkit-airplay', 'deny');
+  backgroundVideo.setAttribute('tabindex', '-1');
   backgroundVideo.setAttribute('aria-hidden', 'true');
+  backgroundVideo.src = new URL('../media/videos/backloop.webm', import.meta.url);
   document.body.prepend(backgroundVideo);
+  backgroundVideo.play().catch(() => {});
 }
+
+const homeUrl = new URL('home.html', window.location.href);
+
+document.addEventListener('keydown', (event) => {
+  if (event.key !== 'Escape' || event.repeat || window.location.pathname === homeUrl.pathname ||
+      document.body.classList.contains('is-page-leaving')) return;
+
+  event.preventDefault();
+  if (reducedMotion.matches) {
+    window.location.assign(homeUrl.href);
+    return;
+  }
+
+  document.body.classList.add('is-page-leaving');
+  window.setTimeout(() => window.location.assign(homeUrl.href), 220);
+});
 
 const defaultProfilePhoto = new URL(
   document.querySelector('#main') ? '../imgs/banners/giovanni.webp' : '../imgs/banners/about2.webp',
@@ -24,7 +58,7 @@ while (nameWalker.nextNode()) {
   const node = nameWalker.currentNode;
   const parent = node.parentElement;
   if (node.textContent.includes('Giovanni Trivellato') &&
-      !parent.closest('script, style, .about-name, .profile-name')) nameNodes.push(node);
+      !parent.closest('script, style, .about-name, .profile-name, .about-eyebrow, .projects-eyebrow, .skills-eyebrow, .contact-eyebrow')) nameNodes.push(node);
 }
 
 for (const node of nameNodes) {
@@ -77,7 +111,7 @@ if (!reducedMotion.matches) {
 
 if (!reducedMotion.matches && "IntersectionObserver" in window) {
   const revealTargets = document.querySelectorAll(
-    ".about-hero, .about-section, .projects-hero, .projects-section-heading, .project-row, .motion-card, .skills-hero, .skills-section, .skill-card, .contact-hero, .contact-section, .contact-social-card, .contact-form, .app-container, .bottom-container",
+    ".about-hero, .about-section, .projects-hero, .projects-section-heading, .project-row, .motion-card, .skills-hero, .skills-section, .skill-card, .contact-hero, .contact-section, .contact-social-card, .contact-form, .inspirations-hero, .inspirations-section-heading, .origin-card, .inspiration-principle, .inspiration-closing, .credits-list, .app-container, .bottom-container",
   );
   const revealObserver = new IntersectionObserver(
     (entries) => {
@@ -133,7 +167,9 @@ if (finePointer.matches && !reducedMotion.matches) {
       running = true;
       requestAnimationFrame(animateCursor);
     }
-    const target = event.target.closest("a, button");
+    const target = event.target.closest(
+      'a, button, input, textarea, select, [role="button"], [tabindex]:not([tabindex="-1"])',
+    );
     cursor.classList.toggle("is-active", Boolean(target));
   }, { passive: true });
 

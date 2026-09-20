@@ -7,6 +7,7 @@
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../../lotties/arrow.json" as="fetch">
+  <link rel="preload" href="../../lotties/iconsLottieSkill.json" as="fetch">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
   <link rel="stylesheet" href="../../css/skills.css">
@@ -52,7 +53,7 @@
           <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/adobe-photoshop.svg" alt=""></span><span class="skill-title"><strong>Image & composition</strong><small>Photoshop and Canva</small></span></div><p class="skill-card-content">Image treatment, thumbnails, cutouts, and compositions for digital projects.</p></article>
           <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="devicon-blender-original" aria-hidden="true"></i></span><span class="skill-title"><strong>3D modeling</strong><small>Blender</small></span></div><p class="skill-card-content">Modeling, composition, and three-dimensional experimentation for visual projects.</p></article>
           <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></span><span class="skill-title"><strong>Interfaces & redesign</strong><small>Design applied to the web</small></span></div><p class="skill-card-content">Restructuring interfaces to improve hierarchy, clarity, and visual identity.</p></article>
-          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-icons" aria-hidden="true"></i></span><span class="skill-title"><strong>Motion for interfaces</strong><small>LottieFiles and icon animation</small></span></div><p class="skill-card-content">Creating and preparing lightweight vector animations for icons, buttons, feedback, and microinteractions in websites and apps, exported with LottieFiles for interface use.</p></article>
+          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><span id="skill-interface-animation" class="skill-interface-animation" data-skill-animation="../../lotties/iconsLottieSkill.json" aria-hidden="true"><i class="fa-solid fa-icons skill-animation-fallback"></i></span></span><span class="skill-title"><strong>Motion for interfaces</strong><small>LottieFiles and icon animation</small></span></div><p class="skill-card-content">Creating and preparing lightweight vector animations for icons, buttons, feedback, and microinteractions in websites and apps, exported with LottieFiles for interface use.</p></article>
         </div>
       </section>
 
@@ -104,14 +105,15 @@
         <a href="#top" aria-current="page" aria-label="Skills"><span>Skills</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="projects.html" aria-label="Projects"><span>Projects</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="contact.html" aria-label="Contact"><span>Contact</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="inspirations.html" aria-label="Process and inspiration"><span>Process &amp; inspiration</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab">Open résumé <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="../skill.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

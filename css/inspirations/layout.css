@@ -1,0 +1,119 @@
+body.inspirations-page {
+  min-height: 100vh;
+  height: auto;
+  background: url("../../imgs/banners/bg7.jfif") center / cover fixed;
+  color: var(--black);
+  font-family: SFPRO-REGULAR, Arial, sans-serif;
+}
+
+.inspirations-page :focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
+}
+
+.inspirations-content { min-width: 0; }
+
+.inspirations-hero {
+  min-height: min(660px, 76vh);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-block: 36px 90px;
+}
+
+.inspirations-eyebrow {
+  margin-bottom: 24px;
+  color: var(--mid-gray);
+  font-size: .82rem;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.inspirations-hero h1 {
+  max-width: 780px;
+  font-size: clamp(3.5rem, 7vw, 6.5rem);
+  font-weight: 400;
+  line-height: .94;
+  letter-spacing: -.07em;
+}
+
+.inspirations-hero h1 em {
+  color: var(--blue);
+  font-family: Shadow, cursive;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: -.04em;
+}
+
+.inspirations-lead {
+  max-width: 650px;
+  margin-top: 42px;
+  color: var(--dark-gray);
+  font-size: clamp(1.12rem, 2vw, 1.35rem);
+  line-height: 1.5;
+  letter-spacing: -.018em;
+}
+
+.inspirations-section {
+  margin-top: 100px;
+  padding-top: 56px;
+  border-top: 1px solid rgba(28, 28, 30, .12);
+  scroll-margin-top: 48px;
+}
+
+.inspirations-section-heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 1fr);
+  gap: 18px;
+  margin-bottom: 54px;
+}
+
+.inspirations-section-number {
+  padding-top: 7px;
+  color: var(--mid-gray);
+  font-size: .9rem;
+}
+
+.inspirations-section-heading h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: -.055em;
+}
+
+.inspirations-section-heading p {
+  max-width: 650px;
+  margin-top: 15px;
+  color: var(--dark-gray);
+  font-size: 1.06rem;
+  line-height: 1.55;
+}
+
+.inspirations-inline-link,
+.inspirations-links a,
+.inspiration-credit a {
+  color: var(--blue);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color .2s ease;
+}
+
+.inspirations-inline-link:hover,
+.inspirations-links a:hover,
+.inspiration-credit a:hover { color: var(--black); }
+
+.inspirations-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 24px;
+  margin-top: 28px;
+}
+
+.inspirations-link-pending {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.5em;
+  color: var(--mid-gray);
+  cursor: default;
+}

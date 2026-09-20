@@ -144,7 +144,7 @@
   background: var(--light-gray-04);
   border: 1px solid var(--light-gray-04);
   box-shadow: 0 8px 16px var(--dark-gray-01);
-  transition: all var(--transition8);
+  transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
 }
 
 .social-icon svg {

@@ -319,14 +319,14 @@
 }
 
 #projects-app .item-1 {
-  background-image: url(../../imgs/banners/project1.webp);
+  background-image: url(../../imgs/banners/project3.webp);
 }
 #projects-app .item-2 {
   background-image: url(../../imgs/banners/project2.webp);
   background-size: cover;
 }
 #projects-app .item-3 {
-  background-image: url(../../imgs/banners/project3.webp);
+  background-image: url(../../imgs/banners/project1.webp);
 }
 
 #contact-app .item-1 {

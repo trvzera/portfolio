@@ -9,7 +9,7 @@
   visibility: hidden;
   pointer-events: none;
   transform: translateY(12px);
-  transition: opacity var(--transition4), transform var(--transition4), visibility var(--transition4);
+  transition: opacity var(--transition4), visibility var(--transition4), color .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
 .back-to-top .link-arrow { width: 1.05em; height: 1.05em; }

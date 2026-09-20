@@ -7,6 +7,7 @@
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../../lotties/arrow.json" as="fetch">
+  <link rel="preload" href="../../lotties/send.json" as="fetch">
   <link rel="stylesheet" href="../../css/contact.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
   <script type="module" src="../../js/site-menu.js"></script>
@@ -38,7 +39,7 @@
           <div class="form-field"><label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
           <div class="form-field form-field-wide"><label for="contact-subject">Subject</label><input id="contact-subject" name="subject" type="text" placeholder="What would you like to discuss?" required></div>
           <div class="form-field form-field-wide"><label for="contact-message">Message</label><textarea id="contact-message" name="message" placeholder="Tell me about your idea, project, or opportunity." required></textarea></div>
-          <div class="contact-form-footer"><p class="contact-form-note" data-form-status>When you send, your email app will open with the message ready.</p><button class="contact-submit" type="submit">Prepare email <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button></div>
+          <div class="contact-form-footer"><p class="contact-form-note" data-form-status>When you send, your email app will open with the message ready.</p><button class="contact-submit" type="submit"><span>Prepare email</span><span id="contact-send-animation" class="contact-send-animation" data-send-animation="../../lotties/send.json" aria-hidden="true"><i class="fa-solid fa-arrow-right contact-send-fallback"></i></span></button></div>
         </form>
       </section>
 
@@ -66,15 +67,16 @@
         <a href="skill.html" aria-label="Skills"><span>Skills</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="projects.html" aria-label="Projects"><span>Projects</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="#top" aria-current="page" aria-label="Contact"><span>Contact</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="inspirations.html" aria-label="Process and inspiration"><span>Process &amp; inspiration</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab">GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab">LinkedIn <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab">Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.instagram.com/trvzera/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — opens in a new tab">Instagram <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab">Open résumé <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab">trvzera <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.instagram.com/trvzera/" target="_blank" rel="noopener noreferrer" aria-label="Instagram — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-instagram" aria-hidden="true"></i><span>Instagram</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="../contact.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

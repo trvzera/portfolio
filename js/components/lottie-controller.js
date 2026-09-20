@@ -26,6 +26,33 @@ export async function registerAnimation(id, path, options = {}) {
   return animation;
 }
 
+export async function registerDirectionalAnimation(id, path, trigger) {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return null;
+
+  const animation = await registerAnimation(id, path);
+  if (!animation || !trigger) return animation;
+
+  let direction = -1;
+  const playDirection = (nextDirection) => {
+    if (nextDirection === direction) return;
+    direction = nextDirection;
+    animation.setDirection(direction);
+    if (animation.isPaused) animation.play();
+  };
+
+  animation.addEventListener('DOMLoaded', () => {
+    trigger.setAttribute('data-animation-ready', '');
+    if (trigger.matches(':hover, :focus-within')) playDirection(1);
+  });
+
+  trigger.addEventListener('pointerenter', () => playDirection(1));
+  trigger.addEventListener('pointerleave', () => playDirection(-1));
+  trigger.addEventListener('focusin', () => playDirection(1));
+  trigger.addEventListener('focusout', () => playDirection(-1));
+
+  return animation;
+}
+
 export function destroyAnimations() {
   animations.forEach((animation) => animation.destroy());
   animations.clear();

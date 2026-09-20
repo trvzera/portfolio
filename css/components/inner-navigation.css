@@ -1,7 +1,8 @@
 .about-shell,
 .skills-shell,
 .projects-shell,
-.contact-shell {
+.contact-shell,
+.inspirations-shell {
   position: relative;
   z-index: 1;
   display: grid;
@@ -15,7 +16,8 @@
 .about-sidebar,
 .skills-sidebar,
 .projects-sidebar,
-.contact-sidebar {
+.contact-sidebar,
+.inspirations-sidebar {
   position: sticky;
   top: 88px;
   align-self: start;
@@ -29,7 +31,8 @@
 .about-home-link,
 .skills-home-link,
 .projects-home-link,
-.contact-home-link {
+.contact-home-link,
+.inspirations-home-link {
   display: inline-flex;
   align-items: center;
   gap: 7px;
@@ -45,7 +48,8 @@
 .about-nav-label,
 .skills-nav-label,
 .projects-nav-label,
-.contact-nav-label {
+.contact-nav-label,
+.inspirations-nav-label {
   margin-bottom: 9px;
   color: var(--mid-gray);
   font-size: .76rem;
@@ -56,7 +60,8 @@
 .about-sidebar a:not(.about-home-link),
 .skills-sidebar a:not(.skills-home-link),
 .projects-sidebar a:not(.projects-home-link),
-.contact-sidebar a:not(.contact-home-link) {
+.contact-sidebar a:not(.contact-home-link),
+.inspirations-sidebar a:not(.inspirations-home-link) {
   width: calc(100% - 7px);
   margin-left: 0;
   padding: 7px 0;
@@ -71,7 +76,9 @@
 .projects-sidebar a:not(.projects-home-link):hover,
 .projects-sidebar a[aria-current="location"],
 .contact-sidebar a:not(.contact-home-link):hover,
-.contact-sidebar a[aria-current="location"] {
+.contact-sidebar a[aria-current="location"],
+.inspirations-sidebar a:not(.inspirations-home-link):hover,
+.inspirations-sidebar a[aria-current="location"] {
   margin-left: 7px;
   color: var(--black);
   font-family: SFPRO-BOLD, Arial, sans-serif;
@@ -80,7 +87,8 @@
 .about-home-link:hover,
 .skills-home-link:hover,
 .projects-home-link:hover,
-.contact-home-link:hover {
+.contact-home-link:hover,
+.inspirations-home-link:hover {
   color: var(--blue);
 }
 
@@ -88,7 +96,8 @@
   .about-shell,
   .skills-shell,
   .projects-shell,
-  .contact-shell {
+  .contact-shell,
+  .inspirations-shell {
     grid-template-columns: 170px minmax(0, 1fr);
     gap: 52px;
     padding-inline: 32px;
@@ -99,7 +108,8 @@
   .about-shell,
   .skills-shell,
   .projects-shell,
-  .contact-shell {
+  .contact-shell,
+  .inspirations-shell {
     display: block;
     padding: 32px 24px 110px;
   }
@@ -107,7 +117,8 @@
   .about-sidebar,
   .skills-sidebar,
   .projects-sidebar,
-  .contact-sidebar {
+  .contact-sidebar,
+  .inspirations-sidebar {
     position: static;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -118,7 +129,8 @@
   .about-home-link,
   .skills-home-link,
   .projects-home-link,
-  .contact-home-link {
+  .contact-home-link,
+  .inspirations-home-link {
     grid-column: 1 / -1;
     width: 100%;
     margin: 0 0 18px;
@@ -128,7 +140,8 @@
   .about-nav-label,
   .skills-nav-label,
   .projects-nav-label,
-  .contact-nav-label {
+  .contact-nav-label,
+  .inspirations-nav-label {
     grid-column: 1 / -1;
     width: 100%;
     margin-bottom: 6px;
@@ -137,12 +150,14 @@
   .about-sidebar a:not(.about-home-link),
   .skills-sidebar a:not(.skills-home-link),
   .projects-sidebar a:not(.projects-home-link),
-  .contact-sidebar a:not(.contact-home-link) { width: calc(100% - 7px); }
+  .contact-sidebar a:not(.contact-home-link),
+  .inspirations-sidebar a:not(.inspirations-home-link) { width: calc(100% - 7px); }
 }
 
 @media (max-width: 500px) {
   .about-shell,
   .skills-shell,
   .projects-shell,
-  .contact-shell { padding-inline: 20px; }
+  .contact-shell,
+  .inspirations-shell { padding-inline: 20px; }
 }

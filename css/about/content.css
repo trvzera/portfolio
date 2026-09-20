@@ -98,6 +98,6 @@ body.about-page {
 .about-volunteering p { margin-top: 24px; color: var(--dark-gray); font-size: .96rem; line-height: 1.55; }
 .about-links { display: flex; flex-wrap: wrap; gap: 16px 24px; margin-top: 32px; }
 .about-inline-link,
-.about-links a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; }
+.about-links a { color: var(--blue); text-decoration: underline; text-underline-offset: 4px; transition: color .2s ease; }
 .about-inline-link:hover,
 .about-links a:hover { color: var(--black); }
