@@ -94,10 +94,10 @@ body:is(.about-page, .skills-page, .projects-page, .contact-page, .inspirations-
     height: 36px;
     margin: -18px 0 0 -18px;
     border-radius: 50%;
-    background: rgb(170 170 170 / 0.72);
-    backdrop-filter: grayscale(1) saturate(0) contrast(1.08);
-    -webkit-backdrop-filter: grayscale(1) saturate(0) contrast(1.08);
-    mix-blend-mode: difference;
+    border: 1px solid rgb(110 110 115 / 0.16);
+    background: rgb(142 142 147 / 0.14);
+    backdrop-filter: grayscale(1) saturate(0) contrast(1.1);
+    -webkit-backdrop-filter: grayscale(1) saturate(0) contrast(1.1);
     pointer-events: none;
     opacity: 0;
     transition:

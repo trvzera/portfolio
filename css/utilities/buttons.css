@@ -136,6 +136,33 @@
   appearance: none;
 }
 
-.lang-toggle svg { transition: transform var(--transition4); }
-.lang-dropdown[data-open] .lang-toggle svg { transform: rotate(180deg); }
+.lang-chevron-animation,
+.lang-chevron-fallback {
+  width: 16px;
+  height: 16px;
+  flex: none;
+}
+
+.lang-chevron-animation { display: none; }
+.lang-chevron-fallback { display: block; }
+.lang-dropdown[data-chevron-ready] .lang-chevron-animation { display: block; }
+
+.lang-chevron-animation svg {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.lang-chevron-fallback {
+  width: 10px;
+  height: 6px;
+  transition: transform var(--transition4);
+}
+
+.lang-dropdown[data-chevron-ready] .lang-chevron-fallback { display: none; }
+.lang-dropdown[data-open] .lang-chevron-fallback { transform: rotate(180deg); }
 .lang-menu a:hover { background: #e8e8ed; color: var(--black); }
+
+@media (prefers-reduced-motion: reduce) {
+  .lang-chevron-fallback { transition: none; }
+}

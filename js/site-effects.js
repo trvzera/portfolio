@@ -2,7 +2,7 @@ const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 console.info(
   '%cVocê encontrou um acampamento escondido. Siga @trvzera no Instagram e depois arrume mais alguma coisa para fazer da vida.',
-  'color: #0267ff; font: 600 13px system-ui;',
+  'color: #0267ff; font: 600 0.8125rem system-ui;',
 );
 
 if (!reducedMotion.matches) {
