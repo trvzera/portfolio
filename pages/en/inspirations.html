@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('loading-pending');
+    }
+  </script>
   <meta name="description" content="The process and inspiration behind Giovanni Trivellato's portfolio">
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../../lotties/arrow.json" as="fetch">
-  <link rel="stylesheet" href="../../css/inspirations.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" href="../../lotties/hamburger.json" as="fetch">
+  <link rel="preload" href="../../lotties/toggle.json" as="fetch">
+  <link rel="stylesheet" href="../../css/dist/inspirations.css">
   <script type="module" src="../../js/site-menu.js"></script>
   <script type="module" src="../../js/site-effects.js"></script>
   <script type="module" src="../../js/arrow-animations.js"></script>
@@ -16,6 +22,9 @@
   <title>Process &amp; inspiration — Giovanni Trivellato</title>
 </head>
 <body class="inspirations-page" id="top">
+  <div class="page-loading-screen" aria-hidden="true">
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../../loading-screens/en/inspirations.webm"></video>
+  </div>
   <div class="inspirations-shell">
     <nav class="inspirations-sidebar" aria-label="On this page">
       <a class="inspirations-home-link" href="home.html" aria-label="Back home"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Back home</span></a>
@@ -42,8 +51,8 @@
           <p>And it worked. Besides being shown to the next year's students, it was selected as one of the best portfolios of my year. I still care a lot about it, but something always felt off. I would change one part, try another idea, and still never feel fully happy with it.</p>
           <p>I still really like the colors, project cards, opening page, and side navigation. The first skills section, contact area, and footer are the parts I still look at and think: that was not what I wanted to communicate.</p>
           <div class="inspirations-links">
-            <span class="inspirations-link-pending" aria-disabled="true">Old version · coming soon</span>
-            <a href="https://github.com/trvzera/portfolio-antigo" target="_blank" rel="noopener noreferrer" aria-label="View the old portfolio repository — opens in a new tab"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+            <a href="https://trvzera.github.io/portfolio-antigo/" target="_blank" rel="noopener noreferrer" aria-label="Visit the old portfolio — opens in a new tab">Visit old version <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+            <a href="https://github.com/trvzera/portfolio-antigo" target="_blank" rel="noopener noreferrer" aria-label="View the old portfolio repository — opens in a new tab"><span class="site-icon icon-github" aria-hidden="true"></span> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
           </div>
         </article>
       </section>
@@ -58,22 +67,22 @@
 
           <article class="story-step">
             <div class="story-copy"><span class="story-kicker">Folders, not apps</span><h3>That was when the page started getting more personality.</h3><p>Then I found this folder reference and thought it made more sense than using regular app icons. The page became much more visual and started moving closer to the style I wanted.</p></div>
-            <figure class="story-visual"><img src="../../imgs/refs/ref2.png" alt="Folder based reference used on the home page" loading="lazy"><figcaption class="inspiration-credit">Reference: <a href="https://br.pinterest.com/ontoflow/" target="_blank" rel="noopener noreferrer" aria-label="ontoflow on Pinterest — opens in a new tab">@ontoflow</a></figcaption></figure>
+            <figure class="story-visual"><img src="../../imgs/refs/ref2.webp" alt="Folder based reference used on the home page" loading="lazy"><figcaption class="inspiration-credit">Reference: <a href="https://br.pinterest.com/ontoflow/" target="_blank" rel="noopener noreferrer" aria-label="ontoflow on Pinterest — opens in a new tab">@ontoflow</a></figcaption></figure>
           </article>
 
           <article class="story-step story-step-wide">
             <div class="story-copy"><span class="story-kicker">Composition</span><h3>A 2 × 2 grid, cards around the edges, and the content in the center.</h3><p>Then it was time to fix the layout. Instead of keeping everything in one line, I built a 2 × 2 grid and placed the main content in the center. One reference suggested the surrounding cards and the other looked like a table full of icons. I mixed both and adapted them into something cleaner and more “Apple”.</p></div>
-            <figure class="story-visual"><div class="story-visual-pair"><img src="../../imgs/refs/ref3.png" alt="Reference showing a visual table of icons" loading="lazy"><img src="../../imgs/refs/ref6.png" alt="Reference with cards around central content" loading="lazy"></div><figcaption class="inspiration-credit"><a href="https://x.com/abhishekbariyaa" target="_blank" rel="noopener noreferrer" aria-label="abhishekbariyaa on X — opens in a new tab">@abhishekbariyaa</a> + <a href="https://savee.com/ruslan_siiz/" target="_blank" rel="noopener noreferrer" aria-label="ruslan siiz on Savee — opens in a new tab">@ruslan_siiz</a></figcaption></figure>
+            <figure class="story-visual"><div class="story-visual-pair"><img src="../../imgs/refs/ref3.webp" alt="Reference showing a visual table of icons" loading="lazy"><img src="../../imgs/refs/ref6.webp" alt="Reference with cards around central content" loading="lazy"></div><figcaption class="inspiration-credit"><a href="https://x.com/abhishekbariyaa" target="_blank" rel="noopener noreferrer" aria-label="abhishekbariyaa on X — opens in a new tab">@abhishekbariyaa</a> + <a href="https://savee.com/ruslan_siiz/" target="_blank" rel="noopener noreferrer" aria-label="ruslan siiz on Savee — opens in a new tab">@ruslan_siiz</a></figcaption></figure>
           </article>
 
           <article class="story-step">
             <div class="story-copy"><span class="story-kicker">Inner pages</span><h3>It took a while, but I found a structure that worked for everything else.</h3><p>The home page was coming together, but I had no idea what to do with the inner pages for quite a while. When I found this reference, I liked the organization, spacing, and side navigation, so I used that logic as a pattern for the rest of the portfolio.</p></div>
-            <figure class="story-visual"><img src="../../imgs/refs/ref4.png" alt="Layout reference used for the inner pages" loading="lazy"><figcaption class="inspiration-credit">Creator not identified</figcaption></figure>
+            <figure class="story-visual"><img src="../../imgs/refs/ref4.webp" alt="Layout reference used for the inner pages" loading="lazy"><figcaption class="inspiration-credit">Creator not identified</figcaption></figure>
           </article>
 
           <article class="story-step">
             <div class="story-copy"><span class="story-kicker">A real path</span><h3>Education and experience did not need to be just a list.</h3><p>I wanted this section to feel like an actual path. I used the reference as a base and connected the dates, schools, and internships into a more visual sequence.</p></div>
-            <figure class="story-visual"><img src="../../imgs/refs/ref5.png" alt="Reference for a vertical timeline" loading="lazy"><figcaption class="inspiration-credit">Reference: <a href="https://br.pinterest.com/ninhstudio/" target="_blank" rel="noopener noreferrer" aria-label="ninhstudio on Pinterest — opens in a new tab">@ninhstudio</a></figcaption></figure>
+            <figure class="story-visual"><img src="../../imgs/refs/ref5.webp" alt="Reference for a vertical timeline" loading="lazy"><figcaption class="inspiration-credit">Reference: <a href="https://br.pinterest.com/ninhstudio/" target="_blank" rel="noopener noreferrer" aria-label="ninhstudio on Pinterest — opens in a new tab">@ninhstudio</a></figcaption></figure>
           </article>
         </div>
       </section>
@@ -89,7 +98,7 @@
 
       <section class="inspirations-section" id="reflection" aria-labelledby="reflection-heading">
         <div class="inspirations-section-heading"><span class="inspirations-section-number">04</span><div><h2 id="reflection-heading">What remained from the process</h2><p>Once I found the right direction, everything else started flowing much more naturally.</p></div></div>
-        <article class="origin-card"><span>Design as communication</span><h3>It is not about copying an interface. It is about understanding why it works.</h3><p>In the end, I took a bit of the essence from each reference and adapted it until it felt like me. Along the way, I kept reading <em>Don't Make Me Think</em>, following Apple's design documentation, and taking Origamid's design course.</p><p>For me, design and communication are some of the most important parts of any website, app, or brand. A project can be really good, but if it cannot show that properly, the first impression already feels wrong.</p></article>
+        <article class="origin-card"><span>Design as communication</span><h3>“If you copy from one author, it’s plagiarism, but if you copy from many, it’s research.”</h3><p><em>Steal Like an Artist.</em></p><p>In the end, I took a bit of the essence from each reference and adapted it until it felt like me. Along the way, I kept reading <em>Don't Make Me Think</em>, following Apple's design documentation, and taking Origamid's design course.</p><p>For me, design and communication are some of the most important parts of any website, app, or brand. A project can be really good, but if it cannot show that properly, the first impression already feels wrong.</p></article>
         <div class="inspiration-closing"><blockquote>A design never comes from one thing alone. It brings together different references, experiences, and choices — and the way each person combines them is what makes the result <strong>unique.</strong></blockquote></div>
       </section>
 
@@ -126,10 +135,10 @@
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-github" aria-hidden="true"></span><span>GitHub</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-linkedin" aria-hidden="true"></span><span>LinkedIn</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-behance" aria-hidden="true"></span><span>Behance</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="../inspirations.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

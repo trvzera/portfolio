@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('loading-pending');
+    }
+  </script>
   <meta name="description" content="Sobre mim — Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../lotties/arrow.json" as="fetch">
-  <link rel="stylesheet" href="../css/about.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" href="../lotties/hamburger.json" as="fetch">
+  <link rel="preload" href="../lotties/toggle.json" as="fetch">
+  <link rel="stylesheet" href="../css/dist/about.css">
   <script type="module" src="../js/site-menu.js"></script>
   <script type="module" src="../js/site-effects.js"></script>
   <script type="module" src="../js/arrow-animations.js"></script>
@@ -16,6 +22,9 @@
   <title>Sobre mim — Giovanni Trivellato</title>
 </head>
 <body class="about-page" id="top">
+  <div class="page-loading-screen" aria-hidden="true">
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../loading-screens/pt/about.webm"></video>
+  </div>
   <div class="about-shell">
     <nav class="about-sidebar" aria-label="Nesta página">
       <a class="about-home-link" href="home.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
@@ -59,9 +68,9 @@
         <span class="about-number">03</span>
         <h2 id="heading-experience">Experiência</h2>
         <div class="about-process about-experience">
-          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i></span><div class="about-process-copy"><span>Estágio anterior</span><h3>PXT Informática</h3><p>Atendimento ao cliente, manutenção, limpeza, montagem e formatação de computadores. Também atuei como videomaker.</p></div></article>
-          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-headset" aria-hidden="true"></i></span><div class="about-process-copy"><span>Estágio atual</span><h3>Colégio Nossa Senhora das Dores</h3><p>Atendimento a crianças e pessoas com pouca experiência em tecnologia, com adaptação rápida a plataformas como Microsoft Teams, SAS, Microsoft 365 e SM.</p></div></article>
-          <article class="about-process-item"><span class="about-process-marker"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i></span><div class="about-process-copy"><span>Experiência prática</span><h3>Motion design &amp; web</h3><p>Experiência com motion design, edição e animações aplicadas a websites e interfaces.</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker"><span class="site-icon icon-screwdriver-wrench" aria-hidden="true"></span></span><div class="about-process-copy"><span>Estágio anterior</span><h3>PXT Informática</h3><p>Atendimento ao cliente, manutenção, limpeza, montagem e formatação de computadores. Também atuei como videomaker.</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker"><span class="site-icon icon-headset" aria-hidden="true"></span></span><div class="about-process-copy"><span>Estágio atual</span><h3>Colégio Nossa Senhora das Dores</h3><p>Atendimento a crianças e pessoas com pouca experiência em tecnologia, com adaptação rápida a plataformas como Microsoft Teams, SAS, Microsoft 365 e SM.</p></div></article>
+          <article class="about-process-item"><span class="about-process-marker"><span class="site-icon icon-wand" aria-hidden="true"></span></span><div class="about-process-copy"><span>Experiência prática</span><h3>Motion design &amp; web</h3><p>Experiência com motion design, edição e animações aplicadas a websites e interfaces.</p></div></article>
         </div>
       </section>
 
@@ -116,11 +125,11 @@
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Redes e links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Abrir currículo</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-github" aria-hidden="true"></span><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-linkedin" aria-hidden="true"></span><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-behance" aria-hidden="true"></span><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Abrir currículo — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-file-lines" aria-hidden="true"></span><span>Abrir currículo</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="en/about.html" aria-label="English"><span>English</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

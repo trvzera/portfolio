@@ -1,4 +1,4 @@
-body.projects-page { min-height: 100vh; height: auto; background: url("../../imgs/banners/bg7.jfif") center / cover fixed; color: var(--black); font-family: SFPRO-REGULAR, Arial, sans-serif; }
+body.projects-page { min-height: 100vh; height: auto; background-color: #ecebef; color: var(--black); font-family: SFPRO-REGULAR, Arial, sans-serif; }
 .projects-page :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
 .projects-content { min-width: 0; }
 .projects-eyebrow { color: var(--mid-gray); font-size: .82rem; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 20px; }

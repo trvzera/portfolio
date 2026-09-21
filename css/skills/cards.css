@@ -17,7 +17,6 @@
 .skill-card-header { display: grid; grid-template-columns: 42px minmax(0, 1fr); align-items: center; gap: 14px; }
 .skill-icon { display: grid; place-items: center; width: 42px; height: 42px; color: var(--black); font-size: 1.75rem; }
 .skill-icon img { width: 30px; height: 30px; object-fit: contain; filter: grayscale(1) contrast(1.7); }
-.skill-icon i[class*="devicon-"] { color: var(--black) !important; filter: grayscale(1); }
 .skill-interface-animation { position: relative; display: grid; place-items: center; width: 34px; height: 34px; overflow: hidden; color: var(--black); }
 .skill-interface-animation svg { display: block; width: 100% !important; height: 100% !important; }
 .skill-interface-animation svg path { fill: currentColor !important; }

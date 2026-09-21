@@ -3,12 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('loading-pending');
+    }
+  </script>
   <meta name="description" content="Processo e inspirações por trás do portfólio de Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../lotties/arrow.json" as="fetch">
-  <link rel="stylesheet" href="../css/inspirations.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <link rel="preload" href="../lotties/hamburger.json" as="fetch">
+  <link rel="preload" href="../lotties/toggle.json" as="fetch">
+  <link rel="stylesheet" href="../css/dist/inspirations.css">
   <script type="module" src="../js/site-menu.js"></script>
   <script type="module" src="../js/site-effects.js"></script>
   <script type="module" src="../js/arrow-animations.js"></script>
@@ -16,6 +22,9 @@
   <title>Processo &amp; inspirações — Giovanni Trivellato</title>
 </head>
 <body class="inspirations-page" id="top">
+  <div class="page-loading-screen" aria-hidden="true">
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../loading-screens/pt/inspirations.webm"></video>
+  </div>
   <div class="inspirations-shell">
     <nav class="inspirations-sidebar" aria-label="Nesta página">
       <a class="inspirations-home-link" href="home.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
@@ -45,8 +54,8 @@
           <p>E deu certo. Além de ser mostrado para os alunos do ano seguinte, ele ainda foi escolhido como um dos melhores portfólios do meu ano. Tenho muito carinho por ele, mas alguma coisa sempre me incomodava. Eu tentava continuar o projeto, mexia em uma parte, trocava outra e, no fim, nada parecia me satisfazer de verdade.</p>
           <p>Mesmo assim, ainda gosto bastante das cores, dos cards de projetos, da primeira página e do menu lateral. Já a primeira parte de habilidades, o contato e o rodapé são coisas que até hoje eu olho e penso: não era isso que eu queria passar.</p>
           <div class="inspirations-links">
-            <span class="inspirations-link-pending" aria-disabled="true">Versão antiga · em breve</span>
-            <a href="https://github.com/trvzera/portfolio-antigo" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do portfólio antigo — abre em uma nova aba"><i class="fa-brands fa-github" aria-hidden="true"></i> Ver repositório <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+            <a href="https://trvzera.github.io/portfolio-antigo/" target="_blank" rel="noopener noreferrer" aria-label="Visitar versão antiga do portfólio — abre em uma nova aba">Visitar versão antiga <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+            <a href="https://github.com/trvzera/portfolio-antigo" target="_blank" rel="noopener noreferrer" aria-label="Ver repositório do portfólio antigo — abre em uma nova aba"><span class="site-icon icon-github" aria-hidden="true"></span> Ver repositório <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
           </div>
         </article>
       </section>
@@ -80,7 +89,7 @@
               <p>Depois achei essa referência com pastas e pensei que faria mais sentido usar isso no lugar de ícones comuns de aplicativos. A página ficou bem mais visual e começou a se aproximar do estilo que eu estava buscando.</p>
             </div>
             <figure class="story-visual">
-              <img src="../imgs/refs/ref2.png" alt="Referência visual com pastas usada na página inicial" loading="lazy">
+              <img src="../imgs/refs/ref2.webp" alt="Referência visual com pastas usada na página inicial" loading="lazy">
               <figcaption class="inspiration-credit">Referência: <a href="https://br.pinterest.com/ontoflow/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ontoflow no Pinterest — abre em uma nova aba">@ontoflow</a></figcaption>
             </figure>
           </article>
@@ -93,8 +102,8 @@
             </div>
             <figure class="story-visual">
               <div class="story-visual-pair">
-                <img src="../imgs/refs/ref3.png" alt="Referência de uma mesa visual com ícones" loading="lazy">
-                <img src="../imgs/refs/ref6.png" alt="Referência de cards ao redor de um conteúdo central" loading="lazy">
+                <img src="../imgs/refs/ref3.webp" alt="Referência de uma mesa visual com ícones" loading="lazy">
+                <img src="../imgs/refs/ref6.webp" alt="Referência de cards ao redor de um conteúdo central" loading="lazy">
               </div>
               <figcaption class="inspiration-credit"><a href="https://x.com/abhishekbariyaa" target="_blank" rel="noopener noreferrer" aria-label="Perfil de abhishekbariyaa no X — abre em uma nova aba">@abhishekbariyaa</a> + <a href="https://savee.com/ruslan_siiz/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ruslan siiz no Savee — abre em uma nova aba">@ruslan_siiz</a></figcaption>
             </figure>
@@ -107,7 +116,7 @@
               <p>A página inicial já estava começando a fazer sentido, mas eu fiquei bastante tempo sem saber o que fazer nas páginas internas. Quando achei essa referência, gostei da organização, dos espaços e da navegação lateral. Aí usei essa lógica como padrão para o resto do portfólio.</p>
             </div>
             <figure class="story-visual">
-              <img src="../imgs/refs/ref4.png" alt="Referência de layout usada nas páginas internas" loading="lazy">
+              <img src="../imgs/refs/ref4.webp" alt="Referência de layout usada nas páginas internas" loading="lazy">
               <figcaption class="inspiration-credit">Autoria não identificada</figcaption>
             </figure>
           </article>
@@ -119,7 +128,7 @@
               <p>Eu queria que essa parte parecesse uma trilha de verdade, mostrando o caminho que fui fazendo. Peguei a referência como base e conectei as datas, escolas e estágios em uma sequência mais visual.</p>
             </div>
             <figure class="story-visual">
-              <img src="../imgs/refs/ref5.png" alt="Referência de uma linha do tempo vertical" loading="lazy">
+              <img src="../imgs/refs/ref5.webp" alt="Referência de uma linha do tempo vertical" loading="lazy">
               <figcaption class="inspiration-credit">Referência: <a href="https://br.pinterest.com/ninhstudio/" target="_blank" rel="noopener noreferrer" aria-label="Perfil de ninhstudio no Pinterest — abre em uma nova aba">@ninhstudio</a></figcaption>
             </figure>
           </article>
@@ -145,7 +154,8 @@
         </div>
         <article class="origin-card">
           <span>Design como comunicação</span>
-          <h3>Não é sobre sair copiando uma interface. É sobre entender por que ela funciona.</h3>
+          <h3>“Se você copiar de um autor, isso é plágio, mas se você copia de muitos, é pesquisa.”</h3>
+          <p><em>Roube como um artista.</em></p>
           <p>No fim, fui pegando um pouco da essência de cada referência e adaptando tudo para ficar com a minha cara. Nesse meio-tempo, continuei lendo <em>Não Me Faça Pensar</em>, acompanhando a documentação de design da Apple e fazendo o curso de design da Origamid.</p>
           <p>Pra mim, o design e a comunicação são algumas das partes mais importantes de qualquer site, aplicativo ou marca. O projeto pode ser muito bom, mas, se ele não consegue mostrar isso direito, a primeira impressão já fica estranha.</p>
         </article>
@@ -190,10 +200,10 @@
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Redes e links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-github" aria-hidden="true"></span><span>GitHub</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-linkedin" aria-hidden="true"></span><span>LinkedIn</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-behance" aria-hidden="true"></span><span>Behance</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — abre em uma nova aba"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span><span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="en/inspirations.html" aria-label="English"><span>English</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

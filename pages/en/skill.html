@@ -3,14 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('loading-pending');
+    }
+  </script>
   <meta name="description" content="Skills and tools — Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../../lotties/arrow.json" as="fetch">
+  <link rel="preload" href="../../lotties/hamburger.json" as="fetch">
+  <link rel="preload" href="../../lotties/toggle.json" as="fetch">
   <link rel="preload" href="../../lotties/iconsLottieSkill.json" as="fetch">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link rel="stylesheet" href="../../css/skills.css">
+  <link rel="stylesheet" href="../../css/dist/skills.css">
   <script type="module" src="../../js/site-menu.js"></script>
   <script type="module" src="../../js/site-effects.js"></script>
   <script type="module" src="../../js/arrow-animations.js"></script>
@@ -18,6 +23,9 @@
   <title>My skills — Giovanni Trivellato</title>
 </head>
 <body class="skills-page" id="top">
+  <div class="page-loading-screen" aria-hidden="true">
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../../loading-screens/en/skills.webm"></video>
+  </div>
   <div class="skills-shell">
     <nav class="skills-sidebar" aria-label="On this page">
       <a class="skills-home-link" href="home.html" aria-label="Back home"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Back home</span></a>
@@ -40,45 +48,45 @@
       <section class="skills-section" id="development" aria-labelledby="development-heading">
         <div class="skills-section-heading"><span class="skills-number">01</span><div><h2 id="development-heading">Development</h2><p>My professional focus is mobile development, especially building apps for iOS. Web front-end and Python are also part of my experience.</p></div></div>
         <div class="skills-grid">
-          <article class="skill-card skill-card-featured"><div class="skill-card-header"><span class="skill-icon"><i class="fa-brands fa-swift" aria-hidden="true"></i></span><span class="skill-title"><strong>Mobile development</strong><small>Working knowledge · Professional focus</small></span></div><p class="skill-card-content">Swift and SwiftUI for building iOS apps from interface design to implementation. I have also had contact with Kotlin and Dart/Flutter.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span><span class="skill-title"><strong>Front-end</strong><small>Advanced knowledge</small></span></div><p class="skill-card-content">HTML, CSS, and JavaScript for building semantic, responsive, and interactive interfaces that combine programming and design.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-brands fa-python" aria-hidden="true"></i></span><span class="skill-title"><strong>Back-end</strong><small>Working knowledge</small></span></div><p class="skill-card-content">Python and programming logic applied to studies and projects. I had initial contact with C# and MySQL during my second year of high school in Programming Logic and Database I classes.</p></article>
+          <article class="skill-card skill-card-featured"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-swift" aria-hidden="true"></span></span><span class="skill-title"><strong>Mobile development</strong><small>Working knowledge · Professional focus</small></span></div><p class="skill-card-content">Swift and SwiftUI for building iOS apps from interface design to implementation. I have also had contact with Kotlin and Dart/Flutter.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-code" aria-hidden="true"></span></span><span class="skill-title"><strong>Front-end</strong><small>Advanced knowledge</small></span></div><p class="skill-card-content">HTML, CSS, and JavaScript for building semantic, responsive, and interactive interfaces that combine programming and design.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-python" aria-hidden="true"></span></span><span class="skill-title"><strong>Back-end</strong><small>Working knowledge</small></span></div><p class="skill-card-content">Python and programming logic applied to studies and projects. I had initial contact with C# and MySQL during my second year of high school in Programming Logic and Database I classes.</p></article>
         </div>
       </section>
 
       <section class="skills-section" id="creative" aria-labelledby="creative-heading">
         <div class="skills-section-heading"><span class="skills-number">02</span><div><h2 id="creative-heading">Visual creation</h2><p>Tools I use to turn ideas into images, video, animation, and 3D compositions.</p></div></div>
         <div class="skills-grid">
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/adobe-after-effects.svg" alt=""></span><span class="skill-title"><strong>Motion & video</strong><small>After Effects and Premiere</small></span></div><p class="skill-card-content">Video editing, intros, MMVs, social animations, and motion pieces.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/adobe-photoshop.svg" alt=""></span><span class="skill-title"><strong>Image & composition</strong><small>Photoshop and Canva</small></span></div><p class="skill-card-content">Image treatment, thumbnails, cutouts, and compositions for digital projects.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="devicon-blender-original" aria-hidden="true"></i></span><span class="skill-title"><strong>3D modeling</strong><small>Blender</small></span></div><p class="skill-card-content">Modeling, composition, and three-dimensional experimentation for visual projects.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i></span><span class="skill-title"><strong>Interfaces & redesign</strong><small>Design applied to the web</small></span></div><p class="skill-card-content">Restructuring interfaces to improve hierarchy, clarity, and visual identity.</p></article>
-          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><span id="skill-interface-animation" class="skill-interface-animation" data-skill-animation="../../lotties/iconsLottieSkill.json" aria-hidden="true"><i class="fa-solid fa-icons skill-animation-fallback"></i></span></span><span class="skill-title"><strong>Motion for interfaces</strong><small>LottieFiles and icon animation</small></span></div><p class="skill-card-content">Creating and preparing lightweight vector animations for icons, buttons, feedback, and microinteractions in websites and apps, exported with LottieFiles for interface use.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/apps/after-effects.svg" alt=""></span><span class="skill-title"><strong>Motion & video</strong><small>After Effects and Premiere</small></span></div><p class="skill-card-content">Video editing, intros, MMVs, social animations, and motion pieces.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/apps/photoshop.svg" alt=""></span><span class="skill-title"><strong>Image & composition</strong><small>Photoshop and Canva</small></span></div><p class="skill-card-content">Image treatment, thumbnails, cutouts, and compositions for digital projects.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><img src="../../imgs/icons/apps/blender.svg" alt="" aria-hidden="true"></span><span class="skill-title"><strong>3D modeling</strong><small>Blender</small></span></div><p class="skill-card-content">Modeling, composition, and three-dimensional experimentation for visual projects.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-pen-ruler" aria-hidden="true"></span></span><span class="skill-title"><strong>Interfaces & redesign</strong><small>Design applied to the web</small></span></div><p class="skill-card-content">Restructuring interfaces to improve hierarchy, clarity, and visual identity.</p></article>
+          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><span id="skill-interface-animation" class="skill-interface-animation" data-skill-animation="../../lotties/iconsLottieSkill.json" aria-hidden="true"><span class="site-icon icon-wand skill-animation-fallback" aria-hidden="true"></span></span></span><span class="skill-title"><strong>Motion for interfaces</strong><small>LottieFiles and icon animation</small></span></div><p class="skill-card-content">Creating and preparing lightweight vector animations for icons, buttons, feedback, and microinteractions in websites and apps, exported with LottieFiles for interface use.</p></article>
         </div>
       </section>
 
       <section class="skills-section" id="systems" aria-labelledby="systems-heading">
         <div class="skills-section-heading"><span class="skills-number">03</span><div><h2 id="systems-heading">Hardware & systems</h2><p>Technical knowledge for configuring, building, and maintaining computers, plus the platforms I have used in support work.</p></div></div>
         <div class="skills-grid">
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-brands fa-windows" aria-hidden="true"></i></span><span class="skill-title"><strong>Operating system</strong><small>Installation and setup</small></span></div><p class="skill-card-content">Installing and configuring Windows, software, and essential system resources.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-computer" aria-hidden="true"></i></span><span class="skill-title"><strong>Computers</strong><small>Hardware and software</small></span></div><p class="skill-card-content">Computer assembly, maintenance, formatting, and cleaning, with advanced hardware and software knowledge.</p></article>
-          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-headset" aria-hidden="true"></i></span><span class="skill-title"><strong>Support & platforms</strong><small>Technical support</small></span></div><p class="skill-card-content">Microsoft Teams, Microsoft 365, SAS, SM, and Google tools such as Docs, Sheets, and Forms.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-windows" aria-hidden="true"></span></span><span class="skill-title"><strong>Operating system</strong><small>Installation and setup</small></span></div><p class="skill-card-content">Installing and configuring Windows, software, and essential system resources.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-computer" aria-hidden="true"></span></span><span class="skill-title"><strong>Computers</strong><small>Hardware and software</small></span></div><p class="skill-card-content">Computer assembly, maintenance, formatting, and cleaning, with advanced hardware and software knowledge.</p></article>
+          <article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-headset" aria-hidden="true"></span></span><span class="skill-title"><strong>Support & platforms</strong><small>Technical support</small></span></div><p class="skill-card-content">Microsoft Teams, Microsoft 365, SAS, SM, and Google tools such as Docs, Sheets, and Forms.</p></article>
         </div>
       </section>
 
       <section class="skills-section" id="soft-skills" aria-labelledby="soft-skills-heading">
         <div class="skills-section-heading"><span class="skills-number">04</span><div><h2 id="soft-skills-heading">Soft skills</h2><p>Qualities I bring to projects, studies, and teamwork.</p></div></div>
         <div class="skills-grid">
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span><span class="skill-title"><strong>Teamwork</strong><small>Collaboration</small></span></div><p class="skill-card-content">Ability to collaborate, listen to ideas, and build solutions together.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-book-open-reader" aria-hidden="true"></i></span><span class="skill-title"><strong>Learning</strong><small>Adaptability</small></span></div><p class="skill-card-content">Ability to learn new tools and turn knowledge into practice.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-comments" aria-hidden="true"></i></span><span class="skill-title"><strong>Communication</strong><small>Verbal and written</small></span></div><p class="skill-card-content">Clear communication for presenting ideas, explaining decisions, and organizing work.</p></article>
-          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-brain" aria-hidden="true"></i></span><span class="skill-title"><strong>Logical reasoning</strong><small>Problem solving</small></span></div><p class="skill-card-content">Analyzing problems and building solutions step by step.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-people-group" aria-hidden="true"></span></span><span class="skill-title"><strong>Teamwork</strong><small>Collaboration</small></span></div><p class="skill-card-content">Ability to collaborate, listen to ideas, and build solutions together.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-book" aria-hidden="true"></span></span><span class="skill-title"><strong>Learning</strong><small>Adaptability</small></span></div><p class="skill-card-content">Ability to learn new tools and turn knowledge into practice.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-comments" aria-hidden="true"></span></span><span class="skill-title"><strong>Communication</strong><small>Verbal and written</small></span></div><p class="skill-card-content">Clear communication for presenting ideas, explaining decisions, and organizing work.</p></article>
+          <article class="skill-card"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-brain" aria-hidden="true"></span></span><span class="skill-title"><strong>Logical reasoning</strong><small>Problem solving</small></span></div><p class="skill-card-content">Analyzing problems and building solutions step by step.</p></article>
         </div>
       </section>
 
       <section class="skills-section" id="languages" aria-labelledby="languages-heading">
         <div class="skills-section-heading"><span class="skills-number">05</span><div><h2 id="languages-heading">Languages</h2><p>Communication for studying, working, and following technical content.</p></div></div>
-        <div class="skills-grid"><article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><i class="fa-solid fa-language" aria-hidden="true"></i></span><span class="skill-title"><strong>English</strong><small>Fluent</small></span></div><p class="skill-card-content">Training from Inglês Express in Belo Horizonte, with fluency for communication, reading, and study.</p></article></div>
+        <div class="skills-grid"><article class="skill-card skill-card-wide"><div class="skill-card-header"><span class="skill-icon"><span class="site-icon icon-language" aria-hidden="true"></span></span><span class="skill-title"><strong>English</strong><small>Fluent</small></span></div><p class="skill-card-content">Training from Inglês Express in Belo Horizonte, with fluency for communication, reading, and study.</p></article></div>
       </section>
 
       <section class="skills-section" id="certificates" aria-labelledby="certificates-heading">
@@ -109,11 +117,11 @@
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-github" aria-hidden="true"></span><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-linkedin" aria-hidden="true"></span><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-behance" aria-hidden="true"></span><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-file-lines" aria-hidden="true"></span><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="../skill.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

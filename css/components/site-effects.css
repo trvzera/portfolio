@@ -22,6 +22,8 @@ body:is(.about-page, .skills-page, .projects-page, .contact-page, .inspirations-
   pointer-events: none;
 }
 
+.page-loading-screen { display: none; }
+
 @media (prefers-reduced-motion: no-preference) {
   .reveal-pending {
     opacity: 0;
@@ -47,10 +49,15 @@ body:is(.about-page, .skills-page, .projects-page, .contact-page, .inspirations-
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 1;
+  opacity: 0;
   filter: contrast(1.22) saturate(1.65);
   pointer-events: none;
+  transition: opacity 0.45s ease-out;
 }
+
+.site-background-video.is-ready { opacity: 1; }
+
+body.is-page-loading .site-background-video { transition: none; }
 
 .profile-name {
   position: relative;
@@ -117,16 +124,68 @@ body:is(.about-page, .skills-page, .projects-page, .contact-page, .inspirations-
 }
 
 @media (prefers-reduced-motion: no-preference) {
+  body.is-page-loading {
+    overflow: hidden;
+  }
+
+  html.loading-pending body::after {
+    opacity: 1;
+    animation: none;
+  }
+
+  html.loading-complete body::after {
+    opacity: 0;
+    animation: none;
+    transition: none;
+  }
+
+  .page-loading-screen {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    background: #e9e9ec;
+    opacity: 1;
+    pointer-events: auto;
+    transition: opacity 0.35s ease-out;
+  }
+
+  .page-loading-screen.is-leaving {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .page-loading-video {
+    display: block;
+    width: 31vw;
+    max-width: 560px;
+    height: auto;
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    clip-path: inset(1px);
+    object-fit: contain;
+    opacity: 0;
+    transition: opacity 0.22s ease-out;
+    will-change: opacity;
+  }
+
+  .page-loading-video.is-ready {
+    opacity: 1;
+  }
+
   body::after {
     content: "";
     position: fixed;
     inset: 0;
     z-index: 2000;
-    background: #fff;
+    background: #ecebef;
     pointer-events: none;
     opacity: 0;
     animation: page-enter 0.3s ease-out backwards;
-    transition: opacity 0.22s ease-in;
+    transition: opacity 0.18s ease-in;
   }
 
   body.is-page-leaving::after {
@@ -136,10 +195,38 @@ body:is(.about-page, .skills-page, .projects-page, .contact-page, .inspirations-
 }
 
 @keyframes page-enter {
-  from {
-    opacity: 1;
-  }
-  to {
-    opacity: 0;
-  }
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+body.performance-lite .site-background-video,
+body.performance-lite .site-cursor {
+  display: none !important;
+}
+
+body.performance-lite {
+  background-color: #ecebef !important;
+  background-image: none !important;
+}
+
+body.performance-lite #main { background-color: transparent; }
+body.performance-lite::before { display: none; }
+
+body.performance-lite #main,
+body.performance-lite::before,
+body.performance-lite .glass-btn,
+body.performance-lite .site-menu-panel,
+body.performance-lite .origin-card,
+body.performance-lite .inspiration-principle,
+body.performance-lite .inspiration-closing,
+body.performance-lite .story-visual {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.performance-lite .reveal-pending {
+  opacity: 1;
+  transform: none;
+  filter: none;
+  transition: none;
 }

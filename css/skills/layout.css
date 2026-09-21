@@ -1,7 +1,7 @@
 body.skills-page {
   min-height: 100vh;
   height: auto;
-  background: url("../../imgs/banners/bg7.jfif") center / cover fixed;
+  background-color: #ecebef;
   color: var(--black);
 }
 

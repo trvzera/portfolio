@@ -13,10 +13,8 @@
 body {
   height: 100vh;
   font-family: SFPRO-REGULAR, arial;
-  background-image: url(../../imgs/banners/bg7.jfif);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #ecebef;
+  background-image: none;
   margin: 0;
   padding: 0;
   isolation: isolate;
@@ -39,23 +37,61 @@ html, #main, .site-menu-panel {
 
 @font-face {
   font-family: "SFPRO-REGULAR";
-  src: url("../../fonts/SFPRODISPLAYREGULAR.OTF") format("opentype");
+  src: url("../../fonts/SFPRODISPLAYREGULAR.woff2") format("woff2");
   font-weight: 100;
   font-style: normal;
+  font-display: swap;
 }
 @font-face {
   font-family: "SFPRO-BOLD";
-  src: url("../../fonts/SFPRODISPLAYBOLD.OTF") format("opentype");
+  src: url("../../fonts/SFPRODISPLAYBOLD.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: "Shadow";
-  src: url("../../fonts/ShadowsIntoLight-Regular.ttf") format("truetype");
+  src: url("../../fonts/ShadowsIntoLight-Regular.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
+
+.site-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex: none;
+  background-color: currentColor;
+  vertical-align: -0.125em;
+  -webkit-mask: var(--site-icon) center / contain no-repeat;
+  mask: var(--site-icon) center / contain no-repeat;
+}
+
+.icon-behance { --site-icon: url("../../imgs/icons/brands/behance.svg"); }
+.icon-css3 { --site-icon: url("../../imgs/icons/brands/css3.svg"); }
+.icon-github { --site-icon: url("../../imgs/icons/brands/github.svg"); }
+.icon-html5 { --site-icon: url("../../imgs/icons/brands/html5.svg"); }
+.icon-instagram { --site-icon: url("../../imgs/icons/brands/instagram.svg"); }
+.icon-javascript { --site-icon: url("../../imgs/icons/brands/javascript.svg"); }
+.icon-linkedin { --site-icon: url("../../imgs/icons/brands/linkedin.svg"); }
+.icon-python { --site-icon: url("../../imgs/icons/brands/python.svg"); }
+.icon-swift { --site-icon: url("../../imgs/icons/brands/swift.svg"); }
+.icon-windows { --site-icon: url("../../imgs/icons/brands/windows.svg"); }
+.icon-book { --site-icon: url("../../imgs/icons/interface/book.svg"); }
+.icon-brain { --site-icon: url("../../imgs/icons/interface/brain.svg"); }
+.icon-code { --site-icon: url("../../imgs/icons/interface/code.svg"); }
+.icon-comments { --site-icon: url("../../imgs/icons/interface/comments.svg"); }
+.icon-computer { --site-icon: url("../../imgs/icons/interface/computer.svg"); }
+.icon-file-lines { --site-icon: url("../../imgs/icons/interface/file-lines.svg"); }
+.icon-globe { --site-icon: url("../../imgs/icons/interface/globe.svg"); }
+.icon-headset { --site-icon: url("../../imgs/icons/interface/headset.svg"); }
+.icon-language { --site-icon: url("../../imgs/icons/interface/language.svg"); }
+.icon-pen-ruler { --site-icon: url("../../imgs/icons/interface/pen-ruler.svg"); }
+.icon-people-group { --site-icon: url("../../imgs/icons/interface/people-group.svg"); }
+.icon-screwdriver-wrench { --site-icon: url("../../imgs/icons/interface/screwdriver-wrench.svg"); }
+.icon-wand { --site-icon: url("../../imgs/icons/interface/wand-magic-sparkles.svg"); }
 
 a {
   text-decoration: none;

@@ -147,7 +147,8 @@
   transition: background-color .2s ease, border-color .2s ease, box-shadow .2s ease, color .2s ease, transform .2s ease;
 }
 
-.social-icon svg {
+.social-icon svg,
+.social-icon .site-icon {
   width: 20px;
   height: 20px;
   fill: currentColor;

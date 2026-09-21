@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('loading-pending');
+    }
+  </script>
   <meta name="description" content="Projects — Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
   <link rel="modulepreload" href="https://cdn.jsdelivr.net/npm/lottie-web@5.12.2/+esm" crossorigin>
   <link rel="preload" href="../../lotties/arrow.json" as="fetch">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-  <link rel="stylesheet" href="../../css/projects.css">
+  <link rel="preload" href="../../lotties/hamburger.json" as="fetch">
+  <link rel="preload" href="../../lotties/toggle.json" as="fetch">
+  <link rel="stylesheet" href="../../css/dist/projects.css">
   <script type="module" src="../../js/site-menu.js"></script>
   <script type="module" src="../../js/site-effects.js"></script>
   <script type="module" src="../../js/arrow-animations.js"></script>
@@ -17,6 +22,9 @@
   <title>Projects — Giovanni Trivellato</title>
 </head>
 <body class="projects-page" id="top">
+  <div class="page-loading-screen" aria-hidden="true">
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../../loading-screens/en/projects.webm"></video>
+  </div>
   <div class="projects-shell">
     <nav class="projects-sidebar" aria-label="On this page">
       <a class="projects-home-link" href="home.html" aria-label="Back home"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Back home</span></a>
@@ -30,7 +38,7 @@
       <p class="projects-eyebrow">Giovanni Trivellato / Selected projects</p>
       <h1>My projects.</h1>
       <p class="projects-lead">A selection of what I’m building across software, the web, and visual creation. Each project starts with an idea and evolves through the process. For all my programming projects and other experiments, visit my GitHub.</p>
-      <div class="projects-hero-links"><a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><i class="fa-brands fa-behance" aria-hidden="true"></i> Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
+      <div class="projects-hero-links"><a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-icon icon-github" aria-hidden="true"></span> GitHub <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-icon icon-behance" aria-hidden="true"></span> Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
     </header>
 
     <section class="projects-section" id="featured" aria-labelledby="featured-heading">
@@ -41,14 +49,16 @@
 
       <article class="project-row" id="boostio" aria-labelledby="boostio-heading">
         <div class="project-preview project-preview-boostio">
-          <img class="boostio-preview-image" src="../../imgs/bootiopreview.gif" alt="Animated preview of the BOOSTio website" loading="lazy">
+          <video class="boostio-preview-video" width="1704" height="974" autoplay loop muted playsinline webkit-playsinline preload="metadata" aria-label="Animated preview of the BOOSTio website">
+            <source src="../../imgs/boostiopreview.webm" type="video/webm">
+          </video>
         </div>
         <div class="project-copy">
           <span class="project-type">Team software project · In progress</span>
           <h3 id="boostio-heading"><img class="boostio-title-logo" src="../../imgs/logoboostio.webp" alt="BOOSTio"></h3>
           <p>I’m building the BOOSTio website with a team. Its software will help people assemble and configure computers. The project is still in development.</p>
-          <div class="project-stack"><ul aria-label="Technologies used"><li title="HTML" aria-label="HTML"><i class="fa-brands fa-html5" aria-hidden="true"></i></li><li title="CSS" aria-label="CSS"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></li><li title="JavaScript" aria-label="JavaScript"><i class="fa-brands fa-js" aria-hidden="true"></i></li><li title="Python" aria-label="Python"><i class="fa-brands fa-python" aria-hidden="true"></i></li></ul></div>
-          <div class="project-actions"><a href="https://github.com/trvzera/BOOSTio" target="_blank" rel="noopener noreferrer" aria-label="View repository — opens in a new tab"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><span class="project-link-pending">boostio.com.br · coming soon</span></div>
+          <div class="project-stack"><ul aria-label="Technologies used"><li title="HTML" aria-label="HTML"><span class="site-icon icon-html5" aria-hidden="true"></span></li><li title="CSS" aria-label="CSS"><span class="site-icon icon-css3" aria-hidden="true"></span></li><li title="JavaScript" aria-label="JavaScript"><span class="site-icon icon-javascript" aria-hidden="true"></span></li><li title="Python" aria-label="Python"><span class="site-icon icon-python" aria-hidden="true"></span></li></ul></div>
+          <div class="project-actions"><a href="https://github.com/trvzera/BOOSTio" target="_blank" rel="noopener noreferrer" aria-label="View repository — opens in a new tab"><span class="site-icon icon-github" aria-hidden="true"></span> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><span class="project-link-pending">boostio.com.br · coming soon</span></div>
         </div>
       </article>
 
@@ -61,8 +71,8 @@
           <span class="project-type">Web · Personal website</span>
           <h3 id="trvzera-heading">trvzera</h3>
           <p>My personal website: a place to share who I am, my projects, and my social links.</p>
-          <div class="project-stack"><ul aria-label="Technologies used"><li title="HTML" aria-label="HTML"><i class="fa-brands fa-html5" aria-hidden="true"></i></li><li title="CSS" aria-label="CSS"><i class="fa-brands fa-css3-alt" aria-hidden="true"></i></li><li title="JavaScript" aria-label="JavaScript"><i class="fa-brands fa-js" aria-hidden="true"></i></li></ul></div>
-          <div class="project-actions"><a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit website — opens in a new tab">Visit website <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://github.com/trvzera/site-trvzera" target="_blank" rel="noopener noreferrer" aria-label="trvzera website repository on GitHub — opens in a new tab"><i class="fa-brands fa-github" aria-hidden="true"></i> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
+          <div class="project-stack"><ul aria-label="Technologies used"><li title="HTML" aria-label="HTML"><span class="site-icon icon-html5" aria-hidden="true"></span></li><li title="CSS" aria-label="CSS"><span class="site-icon icon-css3" aria-hidden="true"></span></li><li title="JavaScript" aria-label="JavaScript"><span class="site-icon icon-javascript" aria-hidden="true"></span></li></ul></div>
+          <div class="project-actions"><a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Visit website — opens in a new tab">Visit website <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a><a href="https://github.com/trvzera/site-trvzera" target="_blank" rel="noopener noreferrer" aria-label="trvzera website repository on GitHub — opens in a new tab"><span class="site-icon icon-github" aria-hidden="true"></span> View repository <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a></div>
         </div>
       </article>
     </section>
@@ -77,34 +87,34 @@
           <div class="motion-preview"><img src="../../imgs/thumbs/VINHETAS - THUMB.webp" alt="Intro collection cover" loading="lazy"><span class="motion-open" aria-hidden="true"><span>→</span></span><span class="motion-open-label">Open on Behance</span></div>
           <h3>Intros</h3>
           <p>Openings, endings, and identity in motion.</p>
-          <span class="motion-tools" aria-label="Tools: After Effects"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/adobe-after-effects.svg" alt="" aria-hidden="true"></span></span>
+          <span class="motion-tools" aria-label="Tools: After Effects"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/apps/after-effects.svg" alt="" aria-hidden="true"></span></span>
         </a>
         <a class="motion-card" href="https://www.behance.net/gallery/216381123/REDES" target="_blank" rel="noopener noreferrer" aria-label="View Social media animation project on Behance — opens in a new tab">
           <div class="motion-preview"><img src="../../imgs/thumbs/REDES - THUMB.webp" alt="Social media animations cover" loading="lazy"><span class="motion-open" aria-hidden="true"><span>→</span></span><span class="motion-open-label">Open on Behance</span></div>
           <h3>Social media animation</h3>
           <p>Motion made for social content.</p>
-          <span class="motion-tools" aria-label="Tools: After Effects, Photoshop"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/adobe-after-effects.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/adobe-photoshop.svg" alt="" aria-hidden="true"></span></span>
+          <span class="motion-tools" aria-label="Tools: After Effects, Photoshop"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/apps/after-effects.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/apps/photoshop.svg" alt="" aria-hidden="true"></span></span>
         </a>
         <a class="motion-card" href="https://www.behance.net/gallery/216378191/MMV" target="_blank" rel="noopener noreferrer" aria-label="View MMVs project on Behance — opens in a new tab">
           <div class="motion-preview"><img src="../../imgs/thumbs/MMVS - THUMB.webp" alt="MMV collection cover" loading="lazy"><span class="motion-open" aria-hidden="true"><span>→</span></span><span class="motion-open-label">Open on Behance</span></div>
           <h3>MMVs</h3>
           <p>Editing shaped by music, rhythm, and visual storytelling.</p>
-          <span class="motion-tools" aria-label="Tools: Photoshop, After Effects"><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/adobe-photoshop.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/adobe-after-effects.svg" alt="" aria-hidden="true"></span></span>
+          <span class="motion-tools" aria-label="Tools: Photoshop, After Effects"><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/apps/photoshop.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/apps/after-effects.svg" alt="" aria-hidden="true"></span></span>
         </a>
         <a class="motion-card" href="https://www.behance.net/gallery/218187183/Videos-3D" target="_blank" rel="noopener noreferrer" aria-label="View 3D edits project on Behance — opens in a new tab">
           <div class="motion-preview"><img src="../../imgs/thumbs/3D - THUMB.webp" alt="3D edits cover" loading="lazy"><span class="motion-open" aria-hidden="true"><span>→</span></span><span class="motion-open-label">Open on Behance</span></div>
           <h3>3D edits</h3>
           <p>Composition and experimentation in three dimensions.</p>
-          <span class="motion-tools" aria-label="Tools: Blender, After Effects"><span class="tool-icon" title="Blender" role="img" aria-label="Blender"><i class="devicon-blender-original" aria-hidden="true"></i></span><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/adobe-after-effects.svg" alt="" aria-hidden="true"></span></span>
+          <span class="motion-tools" aria-label="Tools: Blender, After Effects"><span class="tool-icon" title="Blender" role="img" aria-label="Blender"><img src="../../imgs/icons/apps/blender.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/apps/after-effects.svg" alt="" aria-hidden="true"></span></span>
         </a>
         <a class="motion-card" href="https://www.behance.net/gallery/216620425/THUMBS" target="_blank" rel="noopener noreferrer" aria-label="View Images &amp; thumbnails project on Behance — opens in a new tab">
           <div class="motion-preview"><img src="../../imgs/thumbs/THUMBS - THUMB.webp" alt="Thumbnail collection cover" loading="lazy"><span class="motion-open" aria-hidden="true"><span>→</span></span><span class="motion-open-label">Open on Behance</span></div>
           <h3>Images & thumbnails</h3>
           <p>Covers and visual compositions for videos.</p>
-          <span class="motion-tools" aria-label="Tools: After Effects, Photoshop"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/adobe-after-effects.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/adobe-photoshop.svg" alt="" aria-hidden="true"></span></span>
+          <span class="motion-tools" aria-label="Tools: After Effects, Photoshop"><span class="tool-icon" title="After Effects" role="img" aria-label="After Effects"><img src="../../imgs/icons/apps/after-effects.svg" alt="" aria-hidden="true"></span><span class="tool-icon" title="Photoshop" role="img" aria-label="Photoshop"><img src="../../imgs/icons/apps/photoshop.svg" alt="" aria-hidden="true"></span></span>
         </a>
       </div>
-      <a class="behance-link" href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="View portfolio on Behance — opens in a new tab"><i class="fa-brands fa-behance" aria-hidden="true"></i> View portfolio on Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+      <a class="behance-link" href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="View portfolio on Behance — opens in a new tab"><span class="site-icon icon-behance" aria-hidden="true"></span> View portfolio on Behance <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
     </section>
 
     <footer class="inner-footer"><div><span class="inner-footer-name">Giovanni Trivellato</span><span class="inner-footer-quote">“Everything is a picture waiting to be taken...”</span></div><span>© 2026 · Belo Horizonte, Brazil</span></footer>
@@ -125,11 +135,11 @@
       </div>
       <div class="site-menu-group">
         <span class="site-menu-heading">Social and links</span>
-        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><i class="fa-brands fa-behance" aria-hidden="true"></i><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
-        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><i class="fa-solid fa-globe" aria-hidden="true"></i><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://github.com/trvzera" target="_blank" rel="noopener noreferrer" aria-label="GitHub — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-github" aria-hidden="true"></span><span>GitHub</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.linkedin.com/in/giovanni-trivellato-7662bb336/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-linkedin" aria-hidden="true"></span><span>LinkedIn</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.behance.net/trvzera" target="_blank" rel="noopener noreferrer" aria-label="Behance — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-behance" aria-hidden="true"></span><span>Behance</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-file-lines" aria-hidden="true"></span><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
+        <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
       <a class="site-menu-language" href="../projects.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>

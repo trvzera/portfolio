@@ -24,9 +24,11 @@ O arquivo [`index.html`](index.html) funciona como entrada da raiz e encaminha p
 - Menu flutuante com navegação, redes sociais e troca de idioma.
 - Navegação lateral com indicação automática da seção ativa.
 - Fundo em vídeo com fallback em imagem e suporte a movimento reduzido.
+- Telas de entrada em vídeo específicas para cada página e idioma.
 - Transições de página, animações de entrada e cursor personalizado.
 - Storytelling por rolagem com referências visuais e comparação do processo criativo.
 - Animações Lottie reversíveis em setas, menu, formulário e habilidades.
+- Lottie Web carregado somente na primeira interação com um controle animado.
 - Formulário que prepara a mensagem no aplicativo de e-mail do visitante.
 - Atalho `Esc` para retornar à página inicial.
 - Rótulos acessíveis, foco visível e respeito a `prefers-reduced-motion`.
@@ -37,8 +39,7 @@ O arquivo [`index.html`](index.html) funciona como entrada da raiz e encaminha p
 - CSS modular com propriedades personalizadas
 - JavaScript em módulos ES
 - Lottie Web
-- Font Awesome
-- Devicon
+- SVGs locais para ícones de interface, tecnologias e redes
 - WebP e WebM para mídia otimizada
 
 ## Estrutura
@@ -56,6 +57,7 @@ portfolio/
 │   └── contact.html
 ├── css/
 │   ├── components/
+│   ├── dist/
 │   ├── utilities/
 │   ├── pages/
 │   ├── responsive/
@@ -67,12 +69,26 @@ portfolio/
 ├── js/
 │   └── components/
 ├── imgs/
+│   └── icons/
+│       ├── apps/
+│       ├── brands/
+│       └── interface/
 ├── lotties/
+├── loading-screens/
+│   ├── pt/
+│   └── en/
 ├── media/
+├── scripts/
 └── fonts/
 ```
 
-Os arquivos principais de CSS, como [`css/main.css`](css/main.css), [`css/about.css`](css/about.css), [`css/skills.css`](css/skills.css), [`css/projects.css`](css/projects.css), [`css/inspirations.css`](css/inspirations.css) e [`css/contact.css`](css/contact.css), apenas organizam os módulos usados por cada página.
+Os arquivos principais de CSS, como [`css/main.css`](css/main.css), [`css/about.css`](css/about.css), [`css/skills.css`](css/skills.css), [`css/projects.css`](css/projects.css), [`css/inspirations.css`](css/inspirations.css) e [`css/contact.css`](css/contact.css), organizam os módulos usados por cada página. O comando abaixo reúne e minifica esses módulos em um único arquivo por página dentro de `css/dist/`:
+
+```bash
+npm run build:css
+```
+
+Edite os módulos CSS e execute esse comando antes de testar ou publicar o site.
 
 ## Animações Lottie
 
@@ -87,9 +103,10 @@ As animações interativas mudam de direção durante o movimento. Isso evita sa
 
 ## Executar localmente
 
-O projeto não exige instalação de dependências ou etapa de build. Como utiliza módulos JavaScript, execute-o por um servidor local:
+O projeto não exige instalação de dependências. Gere os arquivos CSS e execute o site por um servidor local:
 
 ```bash
+npm run build:css
 python3 -m http.server 8000
 ```
 

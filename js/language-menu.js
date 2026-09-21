@@ -1,5 +1,3 @@
-import { registerAnimation } from './components/lottie-controller.js';
-
 const languageMenu = document.querySelector('[data-language-menu]');
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
@@ -7,6 +5,7 @@ if (languageMenu) {
   const toggle = languageMenu.querySelector('.lang-toggle');
   const animationPath = languageMenu.dataset.chevronAnimation;
   let animation = null;
+  let animationPromise = null;
   let open = false;
 
   function setOpen(nextOpen) {
@@ -20,7 +19,31 @@ if (languageMenu) {
     }
   }
 
+  function ensureAnimation() {
+    if (animationPromise || !animationPath || reducedMotion.matches) return animationPromise;
+
+    animationPromise = import('./components/lottie-controller.js')
+      .then(({ registerAnimation }) => registerAnimation('language-chevron-animation', animationPath))
+      .then((instance) => {
+        if (!instance) return null;
+        animation = instance;
+        animation.addEventListener('DOMLoaded', () => {
+          languageMenu.setAttribute('data-chevron-ready', '');
+          if (open) {
+            animation.setDirection(1);
+            animation.play();
+          }
+        });
+        return instance;
+      })
+      .catch(() => null);
+
+    return animationPromise;
+  }
+
+  ensureAnimation();
   toggle.addEventListener('click', () => {
+    ensureAnimation();
     setOpen(!open);
   });
 
@@ -35,19 +58,4 @@ if (languageMenu) {
     }
   });
 
-  if (animationPath && !reducedMotion.matches) {
-    registerAnimation('language-chevron-animation', animationPath)
-      .then((instance) => {
-        if (!instance) return;
-        animation = instance;
-        animation.addEventListener('DOMLoaded', () => {
-          languageMenu.setAttribute('data-chevron-ready', '');
-          if (open) {
-            animation.setDirection(1);
-            animation.play();
-          }
-        });
-      })
-      .catch(() => {});
-  }
 }

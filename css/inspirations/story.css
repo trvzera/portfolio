@@ -150,6 +150,9 @@
 }
 
 .inspiration-principle {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
   min-height: 300px;
   padding: 28px;
   border-radius: 26px;
@@ -157,6 +160,7 @@
 
 .inspiration-principle h3 { font-size: 1.35rem; font-weight: 400; letter-spacing: -.03em; }
 .inspiration-principle p { margin-top: 34px; color: var(--dark-gray); line-height: 1.58; }
+.inspiration-principle .inspirations-links { margin-top: auto; padding-top: 34px; }
 
 .inspiration-closing {
   margin-top: 28px;

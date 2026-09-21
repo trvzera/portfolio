@@ -1,7 +1,7 @@
 body.about-page {
   min-height: 100vh;
   height: auto;
-  background: url("../../imgs/banners/bg7.jfif") center / cover fixed;
+  background-color: #ecebef;
   color: var(--black);
   font-family: SFPRO-REGULAR, Arial, sans-serif;
 }
@@ -84,7 +84,7 @@ body.about-page {
 .about-process::before { content: ""; position: absolute; top: 28px; bottom: 28px; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, rgba(2, 103, 255, .42) 12%, rgba(28, 28, 30, .11) 88%, transparent); transform: translateX(-50%); }
 .about-process-item { position: relative; display: grid; grid-template-columns: minmax(0, 1fr) 58px minmax(0, 1fr); align-items: center; min-height: 142px; }
 .about-process-marker { position: relative; z-index: 1; grid-column: 2; grid-row: 1; display: grid; place-items: center; width: 44px; height: 44px; margin: auto; border: 1px solid rgba(28, 28, 30, .08); border-radius: 14px; background: rgba(255, 255, 255, .9); color: var(--blue); box-shadow: 0 10px 28px rgba(34, 52, 82, .08); font-size: .74rem; }
-.about-process-marker i { font-size: 1rem; }
+.about-process-marker .site-icon { font-size: 1rem; }
 .about-process-copy { grid-column: 3; padding: 22px 24px; border: 1px solid rgba(255,255,255,.82); border-radius: 22px; background: rgba(255,255,255,.58); box-shadow: 0 12px 38px rgba(28,28,30,.045); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
 .about-process-item:nth-child(even) .about-process-copy { grid-column: 1; grid-row: 1; text-align: right; }
 .about-process-copy > span { display: block; margin-bottom: 8px; color: var(--blue); font-size: .74rem; letter-spacing: .065em; text-transform: uppercase; }
