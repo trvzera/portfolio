@@ -39,6 +39,8 @@ if (form) {
     window.location.href = `mailto:giovanni@trvzera.com.br?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   });
 
+  submitButton.disabled = false;
+
   window.addEventListener('pagehide', destroyAnimations, { once: true });
 }
 

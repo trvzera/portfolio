@@ -1,5 +1,5 @@
-const sectionNavigation = document.querySelector('.about-sidebar');
-const backToTop = document.querySelector('.back-to-top');
+const sectionNavigation = document.querySelector(".about-sidebar");
+const backToTop = document.querySelector(".back-to-top");
 
 if (sectionNavigation && backToTop) {
   const links = [...sectionNavigation.querySelectorAll('a[href^="#"]')];
@@ -14,22 +14,27 @@ if (sectionNavigation && backToTop) {
     let activeSection = sections[0];
 
     for (const section of sections) {
-      if (section.getBoundingClientRect().top <= marker) activeSection = section;
+      if (section.getBoundingClientRect().top <= marker)
+        activeSection = section;
     }
 
-    const atPageEnd = window.scrollY + window.innerHeight >=
+    const atPageEnd =
+      window.scrollY + window.innerHeight >=
       document.documentElement.scrollHeight - 2;
     if (atPageEnd) activeSection = sections.at(-1);
 
     for (const link of links) {
       if (link.hash === `#${activeSection?.id}`) {
-        link.setAttribute('aria-current', 'location');
+        link.setAttribute("aria-current", "location");
       } else {
-        link.removeAttribute('aria-current');
+        link.removeAttribute("aria-current");
       }
     }
 
-    backToTop.toggleAttribute('data-visible', window.scrollY > window.innerHeight * 0.65);
+    backToTop.toggleAttribute(
+      "data-visible",
+      window.scrollY > window.innerHeight * 0.65,
+    );
   }
 
   function scheduleUpdate() {
@@ -38,7 +43,7 @@ if (sectionNavigation && backToTop) {
     requestAnimationFrame(updateScrollState);
   }
 
-  window.addEventListener('scroll', scheduleUpdate, { passive: true });
-  window.addEventListener('resize', scheduleUpdate);
+  window.addEventListener("scroll", scheduleUpdate, { passive: true });
+  window.addEventListener("resize", scheduleUpdate);
   updateScrollState();
 }

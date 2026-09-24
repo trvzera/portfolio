@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html data-page="skill.html" lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style data-loading-critical>
+    html { background: #e9e9ec; }
+    .page-loading-screen { display: none; }
+    html.loading-pending body { margin: 0; }
+    html.loading-pending body > :not(.page-loading-screen) { visibility: hidden; }
+    html.loading-pending .page-loading-screen { display: grid; position: fixed; inset: 0; z-index: 3000; place-items: center; background: #e9e9ec; overflow: hidden; }
+    html.loading-pending .page-loading-video { width: min(31vw, 560px); height: auto; opacity: 0; }
+    html.loading-pending .page-loading-video.is-ready { opacity: 1; }
+    @media (max-width: 600px) { html.loading-pending .page-loading-video { width: 78vw; } }
+  </style>
   <script>
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.classList.add('loading-pending');
-    }
+    document.documentElement.classList.add('loading-pending');
+    window.loadingSafetyTimer = setTimeout(() => {
+      document.documentElement.classList.remove('loading-pending');
+      document.documentElement.classList.add('loading-complete');
+      document.querySelector('.page-loading-screen')?.remove();
+      document.body?.classList.remove('is-page-loading');
+    }, 6000);
   </script>
   <meta name="description" content="Habilidades e ferramentas — Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../imgs/emojis/about1.webp">
@@ -24,11 +38,11 @@
 </head>
 <body class="skills-page" id="top">
   <div class="page-loading-screen" aria-hidden="true">
-    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../loading-screens/pt/skills.webm"></video>
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture><source src="../loading-screens/pt/skills.webm" type="video/webm"><source src="../loading-screens/pt/skills.mp4" type="video/mp4"></video>
   </div>
   <div class="skills-shell">
     <nav class="skills-sidebar" aria-label="Nesta página">
-      <a class="skills-home-link" href="home.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
+      <a class="skills-home-link" href="../index.html" aria-label="Voltar ao início"><span class="link-arrow link-arrow-back" aria-hidden="true">→</span><span>Voltar ao início</span></a>
       <span class="skills-nav-label">Nesta página</span>
       <a href="#development" aria-current="location" aria-label="Desenvolvimento">Desenvolvimento</a>
       <a href="#creative" aria-label="Criação visual">Criação visual</a>
@@ -108,7 +122,7 @@
     <div class="site-menu-panel glass-btn" id="site-menu-panel" aria-hidden="true">
       <div class="site-menu-group">
         <span class="site-menu-heading">Páginas</span>
-        <a href="home.html" aria-label="Início"><span>Início</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="../index.html" aria-label="Início"><span>Início</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="about.html" aria-label="Sobre mim"><span>Sobre mim</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="#top" aria-current="page" aria-label="Habilidades"><span>Habilidades</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
         <a href="projects.html" aria-label="Projetos"><span>Projetos</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>

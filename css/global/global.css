@@ -98,3 +98,8 @@ a {
   color: inherit;
   cursor: pointer;
 }
+
+/* Keep decorative transforms inside the viewport without blocking vertical scroll. */
+html { overflow-x: clip; }
+body { min-width: 0; }
+main { min-width: 0; }

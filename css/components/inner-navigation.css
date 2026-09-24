@@ -161,3 +161,8 @@
   .contact-shell,
   .inspirations-shell { padding-inline: 20px; }
 }
+
+@media (max-height: 600px) and (min-width: 761px) {
+  :is(.about-shell, .skills-shell, .projects-shell, .contact-shell, .inspirations-shell) { padding-top: 40px; }
+  :is(.about-sidebar, .skills-sidebar, .projects-sidebar, .contact-sidebar, .inspirations-sidebar) { top: 24px; max-height: calc(100svh - 48px); overflow-y: auto; }
+}

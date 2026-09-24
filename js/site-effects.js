@@ -15,13 +15,7 @@ const loadingScreenByPage = {
 };
 
 function showLoadingScreen() {
-  if (reducedMotion.matches) {
-    document.querySelector(".page-loading-screen")?.remove();
-    document.documentElement.classList.remove("loading-pending");
-    return;
-  }
-
-  const page = window.location.pathname.split("/").pop() || "home.html";
+  const page = document.documentElement.dataset.page || window.location.pathname.split("/").pop() || "home.html";
   const screen = loadingScreenByPage[page];
   if (!screen) {
     document.documentElement.classList.remove("loading-pending");
@@ -29,10 +23,14 @@ function showLoadingScreen() {
   }
 
   const language = document.documentElement.lang.startsWith("en") ? "en" : "pt";
+  const loadingFile = language === "pt" && screen === "home"
+    ? "loading-principal"
+    : screen;
   const existingOverlay = document.querySelector(".page-loading-screen");
   const overlay = existingOverlay || document.createElement("div");
+  const restoredFromHistory = Boolean(existingOverlay?.hidden);
   const video =
-    existingOverlay?.querySelector(".page-loading-video") ||
+    (!restoredFromHistory && existingOverlay?.querySelector(".page-loading-video")) ||
     document.createElement("video");
   let finished = false;
   let finishTimer;
@@ -44,7 +42,10 @@ function showLoadingScreen() {
   const loadingEndOffset = 0.1;
 
   overlay.className = "page-loading-screen";
+  overlay.hidden = false;
   overlay.setAttribute("aria-hidden", "true");
+  document.documentElement.classList.remove("loading-complete");
+  document.documentElement.classList.add("loading-pending");
   video.className = "page-loading-video";
   video.muted = true;
   video.defaultMuted = true;
@@ -56,11 +57,16 @@ function showLoadingScreen() {
   video.setAttribute("playsinline", "");
   video.setAttribute("webkit-playsinline", "");
   video.setAttribute("disablepictureinpicture", "");
-  if (!video.getAttribute("src")) {
-    video.src = new URL(
-      `../loading-screens/${language}/${screen}.webm`,
-      import.meta.url,
-    );
+  if (!video.getAttribute("src") && !video.querySelector("source")) {
+    for (const [extension, type] of [["webm", "video/webm"], ["mp4", "video/mp4"]]) {
+      const source = document.createElement("source");
+      source.src = new URL(
+        `../loading-screens/${language}/${loadingFile}.${extension}`,
+        import.meta.url,
+      );
+      source.type = type;
+      video.append(source);
+    }
   }
 
   const skipEmptyIntro = () => {
@@ -83,6 +89,7 @@ function showLoadingScreen() {
       return;
     }
     const waitingForBackground =
+      !reducedMotion.matches &&
       !document.body.classList.contains("performance-lite") &&
       !document.querySelector(".site-background-video.is-ready");
     if (waitingForBackground && elapsed < maximumBackgroundWaitMs) {
@@ -91,13 +98,15 @@ function showLoadingScreen() {
       return;
     }
     finished = true;
+    window.clearTimeout(window.loadingSafetyTimer);
     window.clearTimeout(finishTimer);
     window.clearTimeout(fallbackTimer);
     document.documentElement.classList.remove("loading-pending");
     document.documentElement.classList.add("loading-complete");
     overlay.classList.add("is-leaving");
     window.setTimeout(() => {
-      overlay.remove();
+      overlay.hidden = true;
+      overlay.classList.remove("is-leaving", "has-video-fallback");
       document.body.classList.remove("is-page-loading");
     }, 360);
   };
@@ -118,16 +127,26 @@ function showLoadingScreen() {
   video.addEventListener("seeking", scheduleFinish);
   video.addEventListener("waiting", () => window.clearTimeout(finishTimer));
   video.addEventListener("ended", finish, { once: true });
-  video.addEventListener("error", finish, { once: true });
-  if (!video.parentElement) overlay.append(video);
+  const showFallback = () => {
+    overlay.classList.add('has-video-fallback');
+    finish();
+  };
+  overlay.dataset.label = document.title;
+  video.addEventListener("error", showFallback, { once: true });
+  if (restoredFromHistory) overlay.replaceChildren(video);
+  else if (!video.parentElement) overlay.append(video);
   document.body.classList.add("is-page-loading");
   if (!overlay.isConnected) document.body.append(overlay);
   if (video.readyState >= HTMLMediaElement.HAVE_CURRENT_DATA) showVideo();
   fallbackTimer = window.setTimeout(finish, 3200);
-  video.play().catch(finish);
+  video.play().catch(showFallback);
 }
 
 showLoadingScreen();
+
+window.addEventListener("pageshow", (event) => {
+  if (event.persisted) showLoadingScreen();
+});
 
 let backgroundVideo = null;
 
@@ -212,7 +231,8 @@ if (document.body.classList.contains("performance-lite")) {
   document.querySelectorAll("video[loop]").forEach((video) => video.pause());
 }
 
-const homeUrl = new URL("home.html", window.location.href);
+const homeLink = document.querySelector('.site-menu-group a');
+const homeUrl = new URL(homeLink?.href || (document.documentElement.lang.startsWith('en') ? '../pages/en/home.html' : '../index.html'), import.meta.url);
 
 document.addEventListener("keydown", (event) => {
   if (

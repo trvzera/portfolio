@@ -8,14 +8,14 @@ O projeto combina uma interface inspirada na clareza visual dos produtos Apple c
 
 | Página | Português | English |
 | --- | --- | --- |
-| Início | [`pages/home.html`](pages/home.html) | [`pages/en/home.html`](pages/en/home.html) |
+| Início | [`index.html`](index.html) | [`pages/en/home.html`](pages/en/home.html) |
 | Sobre mim | [`pages/about.html`](pages/about.html) | [`pages/en/about.html`](pages/en/about.html) |
 | Habilidades | [`pages/skill.html`](pages/skill.html) | [`pages/en/skill.html`](pages/en/skill.html) |
 | Projetos | [`pages/projects.html`](pages/projects.html) | [`pages/en/projects.html`](pages/en/projects.html) |
 | Processo & inspirações | [`pages/inspirations.html`](pages/inspirations.html) | [`pages/en/inspirations.html`](pages/en/inspirations.html) |
 | Contato | [`pages/contact.html`](pages/contact.html) | [`pages/en/contact.html`](pages/en/contact.html) |
 
-O arquivo [`index.html`](index.html) funciona como entrada da raiz e encaminha para a página inicial em português.
+O arquivo [`index.html`](index.html) contém a página inicial em português, sem redirecionamento. Para gerar as rotas sem `.html` e publicar na HostGator, veja [o guia de publicação](docs/publicacao.md).
 
 ## Recursos principais
 
@@ -23,12 +23,12 @@ O arquivo [`index.html`](index.html) funciona como entrada da raiz e encaminha p
 - Conteúdo completo em português e inglês.
 - Menu flutuante com navegação, redes sociais e troca de idioma.
 - Navegação lateral com indicação automática da seção ativa.
-- Fundo em vídeo com fallback em imagem e suporte a movimento reduzido.
+- Fundo em vídeo e suporte a movimento reduzido.
 - Telas de entrada em vídeo específicas para cada página e idioma.
 - Transições de página, animações de entrada e cursor personalizado.
 - Storytelling por rolagem com referências visuais e comparação do processo criativo.
 - Animações Lottie reversíveis em setas, menu, formulário e habilidades.
-- Lottie Web carregado somente na primeira interação com um controle animado.
+- Lottie Web compartilhado entre os controles animados.
 - Formulário que prepara a mensagem no aplicativo de e-mail do visitante.
 - Atalho `Esc` para retornar à página inicial.
 - Rótulos acessíveis, foco visível e respeito a `prefers-reduced-motion`.
@@ -106,14 +106,14 @@ As animações interativas mudam de direção durante o movimento. Isso evita sa
 O projeto não exige instalação de dependências. Gere os arquivos CSS e execute o site por um servidor local:
 
 ```bash
-npm run build:css
-python3 -m http.server 8000
+npm run build
+npm run preview
 ```
 
 Depois, acesse:
 
 ```text
-http://localhost:8000/pages/home.html
+http://127.0.0.1:8000/
 ```
 
 ## Conteúdo externo

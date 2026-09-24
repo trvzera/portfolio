@@ -1,12 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-page="contact.html" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style data-loading-critical>
+    html { background: #e9e9ec; }
+    .page-loading-screen { display: none; }
+    html.loading-pending body { margin: 0; }
+    html.loading-pending body > :not(.page-loading-screen) { visibility: hidden; }
+    html.loading-pending .page-loading-screen { display: grid; position: fixed; inset: 0; z-index: 3000; place-items: center; background: #e9e9ec; overflow: hidden; }
+    html.loading-pending .page-loading-video { width: min(31vw, 560px); height: auto; opacity: 0; }
+    html.loading-pending .page-loading-video.is-ready { opacity: 1; }
+    @media (max-width: 600px) { html.loading-pending .page-loading-video { width: 78vw; } }
+  </style>
   <script>
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.classList.add('loading-pending');
-    }
+    document.documentElement.classList.add('loading-pending');
+    window.loadingSafetyTimer = setTimeout(() => {
+      document.documentElement.classList.remove('loading-pending');
+      document.documentElement.classList.add('loading-complete');
+      document.querySelector('.page-loading-screen')?.remove();
+      document.body?.classList.remove('is-page-loading');
+    }, 6000);
   </script>
   <meta name="description" content="Contact Giovanni Trivellato">
   <link rel="icon" type="image/webp" href="../../imgs/emojis/about1.webp">
@@ -24,7 +38,7 @@
 </head>
 <body class="contact-page" id="top">
   <div class="page-loading-screen" aria-hidden="true">
-    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../../loading-screens/en/contact.webm"></video>
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture><source src="../../loading-screens/en/contact.webm" type="video/webm"><source src="../../loading-screens/en/contact.mp4" type="video/mp4"></video>
   </div>
   <div class="contact-shell">
     <nav class="contact-sidebar" aria-label="On this page">
@@ -43,13 +57,13 @@
 
       <section class="contact-section" id="message" aria-labelledby="message-heading">
         <div class="contact-section-heading"><span class="contact-number">01</span><div><h2 id="message-heading">Send a message</h2><p>Fill out the fields and I’ll receive your message through your email app.</p></div></div>
-        <form class="contact-form" data-contact-form data-language="en" action="mailto:giovanni@trvzera.com.br" method="post" enctype="text/plain">
+        <form class="contact-form" data-contact-form data-language="en" method="dialog">
           <div class="form-field"><label for="contact-name">Name</label><input id="contact-name" name="name" type="text" autocomplete="name" placeholder="What should I call you?" required></div>
           <div class="form-field"><label for="contact-email">Your email</label><input id="contact-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></div>
           <div class="form-field form-field-wide"><label for="contact-subject">Subject</label><input id="contact-subject" name="subject" type="text" placeholder="What would you like to discuss?" required></div>
           <div class="form-field form-field-wide"><label for="contact-message">Message</label><textarea id="contact-message" name="message" placeholder="Tell me about your idea, project, or opportunity." required></textarea></div>
-          <div class="contact-form-footer"><p class="contact-form-note" data-form-status>When you send, your email app will open with the message ready.</p><button class="contact-submit" type="submit"><span>Prepare email</span><span id="contact-send-animation" class="contact-send-animation" data-send-animation="../../lotties/send.json" aria-hidden="true"><span class="contact-send-fallback" aria-hidden="true">→</span></span></button></div>
-        </form>
+          <div class="contact-form-footer"><p class="contact-form-note" data-form-status>When you send, your email app will open with the message ready.</p><button class="contact-submit" type="submit" disabled><span>Prepare email</span><span id="contact-send-animation" class="contact-send-animation" data-send-animation="../../lotties/send.json" aria-hidden="true"><span class="contact-send-fallback" aria-hidden="true">→</span></span></button></div>
+        </form><noscript><p><a href="mailto:giovanni@trvzera.com.br">E-mail: giovanni@trvzera.com.br</a></p></noscript>
       </section>
 
       <section class="contact-section" id="socials" aria-labelledby="socials-heading">

@@ -1,4 +1,6 @@
 .DS_Store
+public/
 lotties/Auto-Save/
 lotties/*.aep_AME/
 loading-screens/**/*.xmp
+docs/

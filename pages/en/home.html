@@ -1,13 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html data-page="home.html" lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style data-loading-critical>
+    html { background: #e9e9ec; }
+    .page-loading-screen { display: none; }
+    html.loading-pending body { margin: 0; }
+    html.loading-pending body > :not(.page-loading-screen) { visibility: hidden; }
+    html.loading-pending .page-loading-screen { display: grid; position: fixed; inset: 0; z-index: 3000; place-items: center; background: #e9e9ec; overflow: hidden; }
+    html.loading-pending .page-loading-video { width: min(31vw, 560px); height: auto; opacity: 0; }
+    html.loading-pending .page-loading-video.is-ready { opacity: 1; }
+    @media (max-width: 600px) { html.loading-pending .page-loading-video { width: 78vw; } }
+  </style>
   <script>
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      document.documentElement.classList.add('loading-pending');
-    }
+    document.documentElement.classList.add('loading-pending');
+    window.loadingSafetyTimer = setTimeout(() => {
+      document.documentElement.classList.remove('loading-pending');
+      document.documentElement.classList.add('loading-complete');
+      document.querySelector('.page-loading-screen')?.remove();
+      document.body?.classList.remove('is-page-loading');
+    }, 6000);
   </script>
   <link rel="preload" href="../../fonts/SFPRODISPLAYREGULAR.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../../fonts/SFPRODISPLAYBOLD.woff2" as="font" type="font/woff2" crossorigin>
@@ -28,7 +42,7 @@
 
 <body>
   <div class="page-loading-screen" aria-hidden="true">
-    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture src="../../loading-screens/en/home.webm"></video>
+    <video class="page-loading-video" muted autoplay playsinline preload="auto" disablepictureinpicture><source src="../../loading-screens/en/home.webm" type="video/webm"><source src="../../loading-screens/en/home.mp4" type="video/mp4"></video>
   </div>
   <main id="main">
     <nav class="lang-dropdown" aria-label="Language" data-language-menu data-chevron-animation="../../lotties/chavron.json">
@@ -41,7 +55,7 @@
       </button>
       <div class="lang-menu glass-btn" id="lang-menu">
         <span class="lang-menu-current" aria-current="page" aria-disabled="true"><span>EN-US</span></span>
-        <a href="../home.html" aria-label="PT-BR"><span>PT-BR</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+        <a href="../../index.html" aria-label="PT-BR"><span>PT-BR</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
       </div>
     </nav>
     <div class="app-container">
@@ -182,7 +196,7 @@
         <a href="https://docs.google.com/document/d/1RLWiMWD8McgHf5o1UyKnnWuUwedKc9bnopjsW5MVkgs/edit?usp=sharing" target="_blank" rel="noopener noreferrer" aria-label="Open résumé — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-file-lines" aria-hidden="true"></span><span>Open résumé</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
         <a href="https://www.trvzera.com.br/" target="_blank" rel="noopener noreferrer" aria-label="trvzera — opens in a new tab"><span class="site-menu-link-label"><span class="site-icon icon-globe" aria-hidden="true"></span><span>trvzera</span></span> <span class="link-arrow link-arrow-external" aria-hidden="true">→</span></a>
       </div>
-      <a class="site-menu-language" href="../home.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
+      <a class="site-menu-language" href="../../index.html" aria-label="Português"><span>Português</span><span class="link-arrow link-arrow-internal" aria-hidden="true">→</span></a>
     </div>
     <button type="button" class="site-menu-toggle glass-btn" aria-label="Open menu" aria-expanded="false" aria-controls="site-menu-panel">
       <span id="hamburger-animation" class="hamburger-animation" aria-hidden="true"></span>

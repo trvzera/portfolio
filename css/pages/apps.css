@@ -25,6 +25,8 @@
   text-decoration: none;
   color: inherit;
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover {
   filter: blur(0px);
@@ -33,6 +35,8 @@
   z-index: 10;
   transition-delay: 0;
 }
+}
+
 
 .app-label {
   padding: 5px 10px;
@@ -47,10 +51,14 @@
   font-size: 0;
   transition: var(--transition8);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover > .app-label span {
   font-size: inherit;
 }
+}
+
 
 .app-title {
   font-family: SFPRO-BOLD;
@@ -58,10 +66,14 @@
   font-size: 0;
   transition: var(--transition8);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover > .app-title {
   font-size: 2rem;
 }
+}
+
 
 .app-desc {
   height: 0px;
@@ -72,11 +84,15 @@
   transform: scale(0);
   transition: var(--transition8);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover > .app-desc {
   transform: scale(1);
   height: 60px;
 }
+}
+
 
 .folder {
   position: relative;
@@ -86,10 +102,14 @@
   z-index: 1;
   transition: transform var(--transition8);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .folder {
   transform: translateY(-6px);
 }
+}
+
 
 .folder-tab {
   position: absolute;
@@ -106,10 +126,14 @@
   transform-origin: bottom left;
   transition: transform var(--transition8);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .folder-tab {
   transform: rotate(-8deg) translateY(-3px);
 }
+}
+
 
 .folder-back {
   position: absolute;
@@ -168,10 +192,14 @@
   opacity: 0.5;
   border-radius: 30px;
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .folder-front {
   transform: perspective(600px) rotateX(-28deg) translateY(-8px) scaleX(0.98);
 }
+}
+
 
 .emoji-sticker {
   position: absolute;
@@ -193,12 +221,20 @@
   top: 30px;
   transform: rotate(5deg);
 }
+@media (hover: hover) and (pointer: fine) {
+
 #about-app:hover .sticker-1 {
   transform: rotate(-10deg) scale(1.1);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 #about-app:hover .sticker-2 {
   transform: rotate(10deg) scale(1.1);
 }
+}
+
 
 #skills-app .sticker-1 {
   left: 10px;
@@ -210,12 +246,20 @@
   top: 10px;
   transform: rotate(-3deg);
 }
+@media (hover: hover) and (pointer: fine) {
+
 #skills-app:hover .sticker-1 {
   transform: rotate(5deg) scale(1.1);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 #skills-app:hover .sticker-2 {
   transform: rotate(-8deg) scale(1.1);
 }
+}
+
 
 #projects-app .sticker-1 {
   left: 12px;
@@ -227,12 +271,20 @@
   top: 40px;
   transform: rotate(6deg);
 }
+@media (hover: hover) and (pointer: fine) {
+
 #projects-app:hover .sticker-1 {
   transform: rotate(-5deg) scale(1.1);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 #projects-app:hover .sticker-2 {
   transform: rotate(12deg) scale(1.1);
 }
+}
+
 
 #contact-app .sticker-1 {
   left: 8px;
@@ -244,12 +296,20 @@
   top: 15px;
   transform: rotate(-4deg);
 }
+@media (hover: hover) and (pointer: fine) {
+
 #contact-app:hover .sticker-1 {
   transform: rotate(8deg) scale(1.1);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 #contact-app:hover .sticker-2 {
   transform: rotate(-10deg) scale(1.1);
 }
+}
+
 
 .item {
   position: absolute;
@@ -285,18 +345,30 @@
   background-size: cover;
   transform: translateX(-70%) rotate(8deg) translateY(-40px);
 }
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .item-1 {
   transform: translateX(calc(-50% - 30px)) rotate(-12deg) translateY(-60px);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .item-2 {
   transform: translateX(-50%) rotate(0deg) translateY(-75px);
 }
+}
+
+@media (hover: hover) and (pointer: fine) {
+
 
 .app:hover .item-3 {
   transform: translateX(calc(-50% + 30px)) rotate(12deg) translateY(-60px);
 }
+}
+
 
 #about-app .item-1 {
   background-image: url(../../imgs/banners/about0.webp);

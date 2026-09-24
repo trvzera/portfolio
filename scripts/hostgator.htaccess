@@ -1,0 +1,27 @@
+Options -Indexes -MultiViews
+DirectoryIndex index.html
+RewriteEngine On
+
+# HTTPS is already available on this domain. Keep local previews on HTTP.
+RewriteCond %{HTTP_HOST} ^(www\.)?giovannitrivellato\.com\.br$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://giovannitrivellato.com.br%{REQUEST_URI} [R=301,L]
+
+# Legacy links, including files left by previous uploads.
+RewriteRule ^(?:pages/)?home(?:\.html)?/?$ / [R=301,L]
+RewriteRule ^(?:pages/)?en/home(?:\.html)?/?$ /en/ [R=301,L]
+RewriteRule ^(?:pages/)?(en/)?(about|skill|projects|contact|inspirations)\.html$ /$1$2/ [R=301,L]
+RewriteRule ^pages/(en/)?(about|skill|projects|contact|inspirations)/?$ /$1$2/ [R=301,L]
+# Redirect explicit index.html only, not internal DirectoryIndex requests.
+RewriteCond %{THE_REQUEST} \s/+([^?\ ]*/)?index\.html[?\ ] [NC]
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript application/json image/svg+xml
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|css|js|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  Header always set X-Content-Type-Options "nosniff"
+</IfModule>
