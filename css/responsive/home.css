@@ -291,3 +291,45 @@
   .app { touch-action: pan-y; }
   .app-label span { font-size: inherit; }
 }
+
+/* Keep the home links readable and easy to tap on narrow phones. */
+@media (max-width: 600px) {
+  .bottom-container {
+    transform: none;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .social-container {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    justify-items: center;
+    gap: 10px;
+    width: min(100%, 360px);
+    max-width: 100%;
+    margin-inline: auto;
+    padding: 12px;
+    border-radius: 26px;
+    transform: none;
+  }
+
+  .social-icon {
+    width: 44px;
+    height: 44px;
+  }
+
+  .social-container .blue-btn {
+    grid-column: 1 / -1;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+    max-width: none;
+    margin: 0;
+    padding: 10px 16px;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .social-container:hover { transform: none; }
+  .social-tooltip { display: none; }
+}

@@ -88,9 +88,19 @@
 .link-arrow *, .motion-open > span * { color: inherit !important; fill: currentColor !important; transition: none !important; animation: none !important; }
 
 @media (max-width: 760px) {
-  .site-menu { right: 16px; bottom: 16px; }
+  .site-menu { right: 16px; bottom: max(16px, env(safe-area-inset-bottom)); }
   .site-menu-toggle { width: 60px; height: 60px; }
   .hamburger-animation { width: 42px; height: 42px; }
+  .site-menu-panel {
+    bottom: 76px;
+    width: min(340px, calc(100vw - 32px));
+    max-height: calc(100dvh - 112px - env(safe-area-inset-bottom));
+    gap: 14px;
+    padding: 18px;
+    overscroll-behavior: contain;
+  }
+  .site-menu-group { gap: 2px; }
+  .site-menu-panel a { min-height: 40px; }
 }
 
 @media (max-height: 840px) and (min-width: 761px) {
